@@ -66,7 +66,7 @@ version-precise `Release-[:DEPENDS_ON]->Package` layer underneath so the forensi
 questions stay answerable. Traversal speed and forensic precision want different
 shapes — so I store both and let the planner pick.
 
-<sub>**Python · FastAPI · HydraDB (OpenCypher) · SQLite · Supabase · Docker · vanilla JS, zero build step** &nbsp;·&nbsp; 381 tests · MIT · built solo for Hack Hydra</sub>
+<sub>**Python · FastAPI · HydraDB (OpenCypher) · SQLite · Supabase · Docker · vanilla JS, zero build step**<br>27k lines &nbsp;·&nbsp; 381 tests &nbsp;·&nbsp; MIT &nbsp;·&nbsp; built solo over a hackathon weekend for Hack Hydra</sub>
 
 <br>
 
@@ -77,18 +77,18 @@ shapes — so I store both and let the planner pick.
 <td width="33%" valign="top">
 
 ### Vivedly AI
-**~38k lines · Electron + React**
+**~11k lines · Electron + React**
 
-A proactive desktop coworker — it observes context and surfaces help *before* you ask.
-A five-tier memory hierarchy (RAM → SQLite → patterns → vector → long-term) instead of
-one vector DB, targeting sub-300ms full-context lookup. Offline-first on a local model,
-with a cloud fallback.
+A proactive desktop coworker — it watches what you're working on and surfaces the
+right action *before* you ask. A five-tier memory hierarchy (RAM → SQLite → patterns →
+vector → long-term) instead of one vector DB. Native desktop control, an MCP tool layer,
+streaming voice, and connectors for Gmail, Slack, Notion, and GitHub.
 
 </td>
 <td width="33%" valign="top">
 
 ### Meridian
-**~19k lines · Next.js 16 + React 19**
+**~20k lines · Next.js 16 + React 19**
 
 An AI-native financial terminal — institutional market intelligence and portfolio
 reasoning at 1/490th of a Bloomberg seat. Deterministic server-seeded snapshots so the
@@ -98,7 +98,7 @@ first client render never flickers, then live ticks on top.
 <td width="33%" valign="top">
 
 ### Semantic Output Cache
-**Postgres + pgvector**
+**~4.8k lines · Postgres + pgvector**
 
 A provider-agnostic semantic cache for LLM output. Embeds each result and returns it
 when a *new* query is semantically near — cosine similarity over an exact-match key.
