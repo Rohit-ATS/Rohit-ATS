@@ -24,6 +24,15 @@ Most of my time goes to **developer infrastructure**. I'm drawn to the problems 
 the popular tool is the wrong *shape* for the question — where everyone reaches for a
 vector index and the question was never about similarity.
 
+The throughline in all of it is the same: **the shape of the data decides which
+questions you are allowed to ask.** Blast Radius stores one graph twice because traversal
+speed and forensic precision want different shapes. The cache keys on meaning because an
+exact-match key never hits on LLM traffic. Meridian tracks tax lots individually because
+an average cost basis makes harvesting advice quietly wrong.
+
+Choose that wrong and no amount of application code rescues it. Choose it right and the
+query everyone told you was expensive collapses into one hop.
+
 <br>
 
 ## Blast Radius
@@ -76,7 +85,7 @@ shapes — so I store both and let the planner pick.
 <tr>
 <td width="33%" valign="top">
 
-### Vivedly AI
+### [Vivedly AI](https://github.com/Rohit-ATS/Vivedly-AI)
 **~11k lines · Electron + React**
 
 A proactive desktop coworker — it watches what you're working on and surfaces the
@@ -87,22 +96,23 @@ streaming voice, and connectors for Gmail, Slack, Notion, and GitHub.
 </td>
 <td width="33%" valign="top">
 
-### Meridian
+### [Meridian](https://github.com/Rohit-ATS/meridian)
 **~20k lines · Next.js 16 + React 19**
 
-An AI-native financial terminal — institutional market intelligence and portfolio
-reasoning at 1/490th of a Bloomberg seat. Deterministic server-seeded snapshots so the
-first client render never flickers, then live ticks on top.
+An AI-native financial terminal — fifteen views, options priced with Black-Scholes,
+and tax lots tracked individually rather than by average basis. Market data is
+**simulated**, deliberately: it runs with no API key, and the feed swaps at one
+function.
 
 </td>
 <td width="33%" valign="top">
 
-### Semantic Output Cache
+### [Semantic Output Cache](https://github.com/Rohit-ATS/semantic-output-cache)
 **~4.8k lines · Postgres + pgvector**
 
-A provider-agnostic semantic cache for LLM output. Embeds each result and returns it
-when a *new* query is semantically near — cosine similarity over an exact-match key.
-Reports the dollars and milliseconds it saved you.
+Exact-match caches never hit on LLM traffic — nobody phrases it twice the same way.
+This one embeds each output and serves it when cosine similarity clears a threshold.
+Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo.
 
 </td>
 </tr>
@@ -121,6 +131,9 @@ Reports the dollars and milliseconds it saved you.
 <br>
 
 ## How I build
+
+Four rules I hold every project to. They're unglamorous, and they're where most of the
+real decisions end up.
 
 **No mocked data. Anywhere.** Every number on every screen comes back from a query that
 was actually run — including empty states. A demo that lies is worse than no demo.
