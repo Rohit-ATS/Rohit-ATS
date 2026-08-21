@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 268" width="1200" height="268" role="img" aria-label="Technology stack: languages, data and graph, AI and agents, interface, infrastructure">
+  <defs>
+    <linearGradient id="sb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0e14"/><stop offset="100%" stop-color="#11161f"/>
+    </linearGradient>
+    <pattern id="sg" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M26 0H0V26" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+    <clipPath id="sc"><rect width="1200" height="268" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#sc)">
+    <rect width="1200" height="268" fill="url(#sb)"/>
+    <rect width="1200" height="268" fill="url(#sg)"/>
+
+    <text x="40" y="42" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" letter-spacing="3.2" fill="#5c6472">THE STACK I ACTUALLY SHIP IN</text>
+    <rect x="40" y="56" width="1120" height="1" fill="#ffffff" fill-opacity="0.07"/>
+
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">
+      <!-- col 1 -->
+      <circle cx="46" cy="88" r="3.5" fill="#8fb4ff"/>
+      <text x="58" y="92" font-size="11.5" letter-spacing="1.9" fill="#8fb4ff">LANGUAGES</text>
+      <text x="40" y="122" fill="#c9d1d9">Python</text>
+      <text x="40" y="148" fill="#c9d1d9">TypeScript</text>
+      <text x="40" y="174" fill="#c9d1d9">JavaScript</text>
+      <text x="40" y="200" fill="#c9d1d9">SQL &#183; Cypher</text>
+      <text x="40" y="226" fill="#c9d1d9">Bash</text>
+
+      <rect x="216" y="76" width="1" height="164" fill="#ffffff" fill-opacity="0.06"/>
+
+      <!-- col 2 -->
+      <circle cx="252" cy="88" r="3.5" fill="#7ee7d3"/>
+      <text x="264" y="92" font-size="11.5" letter-spacing="1.9" fill="#7ee7d3">DATA &amp; GRAPH</text>
+      <text x="246" y="122" fill="#c9d1d9">HydraDB</text>
+      <text x="246" y="148" fill="#c9d1d9">PostgreSQL</text>
+      <text x="246" y="174" fill="#c9d1d9">pgvector</text>
+      <text x="246" y="200" fill="#c9d1d9">SQLite &#183; WAL</text>
+      <text x="246" y="226" fill="#c9d1d9">Redis &#183; Prisma</text>
+
+      <rect x="422" y="76" width="1" height="164" fill="#ffffff" fill-opacity="0.06"/>
+
+      <!-- col 3 -->
+      <circle cx="458" cy="88" r="3.5" fill="#ffab70"/>
+      <text x="470" y="92" font-size="11.5" letter-spacing="1.9" fill="#ffab70">AI &amp; AGENTS</text>
+      <text x="452" y="122" fill="#c9d1d9">Claude API</text>
+      <text x="452" y="148" fill="#c9d1d9">MCP servers</text>
+      <text x="452" y="174" fill="#c9d1d9">Ollama &#183; local LLM</text>
+      <text x="452" y="200" fill="#c9d1d9">Whisper &#183; TTS</text>
+      <text x="452" y="226" fill="#c9d1d9">Embeddings &#183; RAG</text>
+
+      <rect x="666" y="76" width="1" height="164" fill="#ffffff" fill-opacity="0.06"/>
+
+      <!-- col 4 -->
+      <circle cx="702" cy="88" r="3.5" fill="#d2a8ff"/>
+      <text x="714" y="92" font-size="11.5" letter-spacing="1.9" fill="#d2a8ff">INTERFACE</text>
+      <text x="696" y="122" fill="#c9d1d9">React 19</text>
+      <text x="696" y="148" fill="#c9d1d9">Next.js 16</text>
+      <text x="696" y="174" fill="#c9d1d9">Electron</text>
+      <text x="696" y="200" fill="#c9d1d9">Tailwind v4</text>
+      <text x="696" y="226" fill="#c9d1d9">Vanilla JS, no build</text>
+
+      <rect x="920" y="76" width="1" height="164" fill="#ffffff" fill-opacity="0.06"/>
+
+      <!-- col 5 -->
+      <circle cx="956" cy="88" r="3.5" fill="#ff8a8a"/>
+      <text x="968" y="92" font-size="11.5" letter-spacing="1.9" fill="#ff8a8a">INFRASTRUCTURE</text>
+      <text x="950" y="122" fill="#c9d1d9">Docker &#183; Compose</text>
+      <text x="950" y="148" fill="#c9d1d9">FastAPI</text>
+      <text x="950" y="174" fill="#c9d1d9">Render &#183; Vercel</text>
+      <text x="950" y="200" fill="#c9d1d9">Supabase</text>
+      <text x="950" y="226" fill="#c9d1d9">GitHub Actions</text>
+    </g>
+
+    <rect width="1200" height="268" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+  </g>
+</svg>
