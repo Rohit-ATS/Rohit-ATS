@@ -140,8 +140,13 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
   <img alt="Contribution streak: current streak, total contributions, and longest streak" src="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0" width="100%">
 </picture>
 
-<!-- SNAKE: added once .github/workflows/snake.yml has run green and the `output`
-     branch exists. Referencing it before then renders a broken image. -->
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-light.svg">
+  <img alt="A snake eating a year of my contribution graph" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg" width="100%">
+</picture>
 
 <!-- STATS CARDS - waiting on a self-hosted instance.
      The public github-readme-stats deployment is returning 503 on every endpoint
