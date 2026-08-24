@@ -46,6 +46,12 @@ jobs:
             dist/snake-dark.svg?color_snake=%23a78bfa&color_dots=%232d3343,%23164e5c,%231a7f8f,%2322d3ee,%2367e8f9
             dist/snake-light.svg?color_snake=%237c3aed&color_dots=%23e9eef5,%23bfe3ec,%237fc9dc,%232ba3c0,%230891b2
 
+      # build_stats.py imports design -> fonts, which subsets an OFL webfont into the
+      # SVG. Without these the step dies on ImportError, and the card silently stops
+      # regenerating while the snake keeps publishing.
+      - name: Install the font toolchain
+        run: python -m pip install --quiet "fonttools[woff]" brotli
+
       - name: Generate the stats card
         run: python tools/build_stats.py dist
         env:

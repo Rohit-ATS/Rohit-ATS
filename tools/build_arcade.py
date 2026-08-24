@@ -1,17 +1,21 @@
-"""assets/arcade-{dark,light}.svg - a playable-looking Space Invaders divider.
+"""assets/arcade-{dark,light}.svg - a Space Invaders divider.
 
-Pixel art in the same idiom as the banner portrait: everything is a 1x1 cell merged into
-horizontal path runs with shape-rendering="crispEdges", never a font glyph.
+Pixel art in the same idiom as the banner portrait: every sprite is a grid of 1x1 cells
+merged into horizontal path runs with shape-rendering="crispEdges", never a font glyph.
 
-The march is stepped, not eased. Space Invaders moved on a fixed tick and that stutter
-is the whole character of it; a smooth translate reads as a slideshow of a spaceship.
+Two things keep it from reading as clip art. The march is stepped rather than eased -
+Space Invaders moved on a fixed tick, and that stutter is the whole character of it -
+and the sprites carry a bloom, so they sit inside the panel's light rather than on top
+of it.
 """
 from __future__ import annotations
 
-from svgkit import THEMES, svg_open, text
+import design as D
+import fonts
+from design import SIZE, T
 
-W, H = 1180, 180
-CELL = 4
+W, H = 1180, 232
+CELL = 5
 LOOP = 8.0
 
 INVADER_A = [
@@ -68,78 +72,76 @@ def sprite_path(rows: list[str], cell: int = CELL) -> str:
 
 
 def build(theme: str) -> str:
-    c = THEMES[theme]
-    o = [svg_open(W, H, "Space Invaders",
-                  "A pixel-art Space Invaders divider: two ranks of invaders marching on "
-                  "a fixed tick above a ship that fires back."),
-         f'<rect width="{W}" height="{H}" rx="10" fill="{c["bg"]}"/>',
-         f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="9.5" fill="none"'
-         f' stroke="{c["chrome_dim"]}" opacity="0.7"/>']
+    c = D.THEMES[theme]
+    css, _ = fonts.embed_faces(fonts.charset(
+        "ARCADEhackathons / video games / historyINSERT COIN"))
 
-    # ---- starfield, deterministic so the file is stable between runs
+    o = [D.svg_open(W, H, "Space Invaders",
+                    "A pixel-art Space Invaders divider: two ranks of invaders marching "
+                    "on a fixed tick above a ship, with bombs falling.", css),
+         f'<defs><path id="invA" d="{sprite_path(INVADER_A)}"/>'
+         f'<path id="invB" d="{sprite_path(INVADER_B)}"/></defs>',
+         D.defs(c, glow_colour=c["cyan"]), D.page(W, H, c)]
+
+    o.append(D.eyebrow(44, 40, "ARCADE", c, colour=c["green"]))
+    o.append(T(W - 44, 40, "hackathons / video games / history", size=SIZE["micro"],
+               fill=c["text3"], anchor="end"))
+    o.append(D.rule(44, 56, W - 88, c))
+
+    # ---- starfield. Deterministic LCG so the file is byte-stable between runs.
     seed = 1
-    for i in range(70):
+    for i in range(58):
         seed = (1103515245 * seed + 12345) % (1 << 31)
-        sx = 14 + (seed >> 7) % (W - 28)
+        sx = 56 + (seed >> 7) % (W - 112)
         seed = (1103515245 * seed + 12345) % (1 << 31)
-        sy = 12 + (seed >> 7) % (H - 24)
-        o.append(f'<rect x="{sx}" y="{sy}" width="1.6" height="1.6" fill="{c["dim"]}"'
-                 f' opacity="0.5"><animate attributeName="opacity"'
-                 f' values="0.12;0.6;0.12" dur="{2.0 + (i % 7) * 0.4:.1f}s"'
+        sy = 70 + (seed >> 7) % (H - 100)
+        o.append(f'<rect x="{sx}" y="{sy}" width="1.7" height="1.7" fill="{c["text3"]}"'
+                 f' opacity="0.4"><animate attributeName="opacity"'
+                 f' values="0.1;0.55;0.1" dur="{2.0 + (i % 7) * 0.4:.1f}s"'
                  f' repeatCount="indefinite"/></rect>')
 
     iw = len(INVADER_A[0]) * CELL
-    gap = 64
-    cols = 8
-    row_w = cols * (iw + gap) - gap
-    x_start = (W - row_w) / 2
+    gap, cols = 78, 7
+    x_start = (W - (cols * (iw + gap) - gap)) / 2
 
-    # Stepped march: 8 discrete positions out, then back. Same tick for both ranks.
-    steps = [f"{v} 0" for v in (0, 9, 18, 27, 36, 27, 18, 9, 0)]
+    steps = [f"{v} 0" for v in (0, 10, 20, 30, 40, 30, 20, 10, 0)]
     kt = ";".join(f"{i / (len(steps) - 1):.4f}" for i in range(len(steps)))
     march = (f'<animateTransform attributeName="transform" type="translate"'
              f' values="{";".join(steps)}" keyTimes="{kt}" calcMode="discrete"'
              f' dur="{LOOP}s" repeatCount="indefinite"/>')
 
-    for rank, (rows, colour, y) in enumerate(
-            ((INVADER_A, c["mark"], 30), (INVADER_B, c["chrome"], 78))):
-        d = sprite_path(rows)
-        body = []
-        for i in range(cols):
-            x = x_start + i * (iw + gap)
-            # every invader shares the sprite via <use>, so the path is stored once
-            body.append(f'<use href="#inv{rank}" x="{x:.0f}" y="{y}"/>')
-        o.append(f'<g fill="{colour}" shape-rendering="crispEdges">{march}'
-                 f'{"".join(body)}</g>')
-        o.insert(1, f'<defs><path id="inv{rank}" d="{d}"/></defs>')
+    for ref, colour, y in (("invA", c["green"], 74), ("invB", c["cyan"], 118)):
+        body = "".join(f'<use href="#{ref}" x="{x_start + i * (iw + gap):.0f}" y="{y}"/>'
+                       for i in range(cols))
+        o.append(f'<g fill="{colour}" shape-rendering="crispEdges" filter="url(#fBloom)"'
+                 f' opacity="0.95">{march}{body}</g>')
 
-    # ---- ship, sweeping under the ranks. Travel stops short of the right edge:
-    # the full width runs the ship straight through the footer caption.
+    # ---- ship. Travel stops well short of the right edge: at full width it drives
+    # straight through the caption.
     sw = len(SHIP[0]) * CELL
-    ship_y = H - 44
-    o.append(f'<g fill="{c["violet"]}" shape-rendering="crispEdges">'
+    ship_y = H - 54
+    o.append(f'<g fill="{c["violet"]}" shape-rendering="crispEdges" filter="url(#fBloom)">'
              f'<animateTransform attributeName="transform" type="translate"'
-             f' values="0 0;{W - sw - 340:.0f} 0;0 0" keyTimes="0;0.5;1"'
+             f' values="0 0;{W - sw - 360:.0f} 0;0 0" keyTimes="0;0.5;1"'
+             f' calcMode="spline" keySplines="{D.EASE};{D.EASE}"'
              f' dur="{LOOP * 2:.1f}s" repeatCount="indefinite"/>'
-             f'<path transform="translate(60 {ship_y})" d="{sprite_path(SHIP)}"/></g>')
+             f'<path transform="translate(80 {ship_y})" d="{sprite_path(SHIP)}"/></g>')
 
-    # ---- bombs. They fall from the ranks rather than rising from the ship: the x
-    # positions are fixed, and a fixed-x shot leaving a ship that is sweeping past
-    # reads as a bug rather than as gunfire.
-    for i, delay in enumerate((0.0, 1.3, 2.9, 4.1, 5.7, 6.6)):
-        x = x_start + 26 + i * (iw + gap) * 1.3
-        if x > W - 40:
+    # ---- bombs fall from the ranks rather than rising from the ship: a fixed-x shot
+    # leaving a ship that is sweeping past reads as a bug, not as gunfire.
+    for i, delay in enumerate((0.0, 1.4, 2.9, 4.3, 5.8)):
+        x = x_start + 24 + i * (iw + gap) * 1.35
+        if x > W - 150:
             continue
-        o.append(f'<rect x="{x:.0f}" y="112" width="{CELL}" height="{CELL * 4}"'
-                 f' fill="{c["warn"]}" opacity="0">'
-                 f'<animate attributeName="y" values="112;{ship_y + 20}" dur="1.15s"'
+        o.append(f'<rect x="{x:.0f}" y="166" width="{CELL - 2}" height="{CELL * 3}"'
+                 f' rx="1" fill="{c["amber"]}" opacity="0">'
+                 f'<animate attributeName="y" values="166;{ship_y + 16}" dur="1.2s"'
                  f' begin="{delay}s" repeatCount="indefinite"/>'
-                 f'<animate attributeName="opacity" values="0;1;1;0" dur="1.15s"'
+                 f'<animate attributeName="opacity" values="0;1;1;0" dur="1.2s"'
                  f' begin="{delay}s" repeatCount="indefinite"/></rect>')
 
-    o.append(text(20, H - 12, "INSERT COIN", 10, c["title"], opacity=0.75))
-    o.append(text(W - 20, H - 12, "hackathons / video games / history", 10, c["title"],
-                  anchor="end", opacity=0.75))
+    o.append(T(W - 44, H - 22, "INSERT COIN", size=SIZE["micro"], mono=True,
+               fill=c["text3"], anchor="end", opacity=0.8))
     o.append("</svg>")
     return "".join(o)
 

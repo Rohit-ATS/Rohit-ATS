@@ -16,15 +16,16 @@ textLength - these glyphs are about one em wide, and forcing them to 0.6em squas
 """
 from __future__ import annotations
 
-from svgkit import THEMES, ch, esc, svg_open, text, window
+import design as D
+import fonts
+from design import SIZE, T, w
 
-W, H = 1180, 452
-BAR = 34
-SQ = 46
-BX, BY = 34, 58
+W, H = 1180, 462
+SQ = 42
+BX, BY = 52, 96
 
-PLY = 0.82
-HOLD = 3.4
+PLY = 0.78
+HOLD = 3.2
 
 GLYPH = {"k": "♚", "q": "♛", "r": "♜",
          "b": "♝", "n": "♞", "p": "♟"}
@@ -105,36 +106,53 @@ def piece_meta():
 
 
 def build(theme: str) -> str:
-    c = THEMES[theme]
-    light_sq = "#1A2740" if theme == "dark" else "#E9EFF7"
-    dark_sq = "#101B2E" if theme == "dark" else "#C9D8E8"
-    wc = c["value"]
-    bc = c["violet"]
+    """The Opera Game, drawn as a board worth looking at.
+
+    Piece glyphs are the one place on this profile that uses font text rather than
+    paths: at this size the Unicode chess set is unambiguous, and drawing six pieces as
+    outlines would add more path data than everything else here combined. The sides are
+    told apart by colour rather than by the hollow/filled convention, because hollow
+    glyphs render thin and weak against a dark board.
+    """
+    c = D.THEMES[theme]
+    light_sq = "#1A2A46" if theme == "dark" else "#EDF2F9"
+    dark_sq = "#0E1A2E" if theme == "dark" else "#D6E2F0"
+    wc, bc = c["text"], c["violet"]
 
     tracks, captured, _ = simulate()
     meta = piece_meta()
 
-    chrome, _ = window(W, H, c, "opera-1858 --replay", titlebar=BAR)
-    o = [svg_open(W, H, "Morphy's Opera Game, 1858",
-                  "A chessboard replaying Paul Morphy's Opera Game: seventeen moves "
-                  "ending in a queen sacrifice and mate."),
-         chrome]
+    chars = fonts.charset("".join(SAN) + "OFF THE CLOCKMORPHY vs BRUNSWICK & ISOUARD"
+                          + "Paris Opera, 1858 seventeen movesabcdefgh12345678"
+                          + "both rooks and the queen, given away"
+                          + "mate delivered by the only two pieces left on the board"
+                          + "morphy opera 1858 .O-#+x")
+    css, _ = fonts.embed_faces(chars)
+
+    o = [D.svg_open(W, H, "Morphy's Opera Game, 1858",
+                    "A chessboard replaying Paul Morphy's Opera Game: seventeen moves "
+                    "ending in a queen sacrifice and mate.", css),
+         D.defs(c), D.page(W, H, c)]
+
+    o.append(D.eyebrow(44, 46, "OFF THE CLOCK", c, colour=c["amber"]))
+    o.append(T(W - 44, 46, "morphy / opera / 1858", size=SIZE["micro"], mono=True,
+               fill=c["text3"], anchor="end"))
+    o.append(D.rule(44, 64, W - 88, c))
 
     # ---- board
+    o.append(D.glow(BX + SQ * 4, BY + SQ * 4, 250))
+    o.append(D.card(BX - 12, BY - 12, SQ * 8 + 24, SQ * 8 + 24, c, radius=14))
     for r in range(8):
         for f in range(8):
-            x, y = BX + f * SQ, BY + r * SQ
-            fill = light_sq if (r + f) % 2 == 0 else dark_sq
-            o.append(f'<rect x="{x}" y="{y}" width="{SQ}" height="{SQ}" fill="{fill}"/>')
-    o.append(f'<rect x="{BX - 0.5}" y="{BY - 0.5}" width="{SQ * 8 + 1}" height="{SQ * 8 + 1}"'
-             f' fill="none" stroke="{c["chrome_dim"]}"/>')
+            o.append(f'<rect x="{BX + f * SQ}" y="{BY + r * SQ}" width="{SQ}" height="{SQ}"'
+                     f' fill="{light_sq if (r + f) % 2 == 0 else dark_sq}"/>')
     for f in range(8):
-        o.append(text(BX + f * SQ + SQ / 2, BY + SQ * 8 + 15, "abcdefgh"[f], 10,
-                      c["title"], anchor="middle"))
-        o.append(text(BX - 10, BY + f * SQ + SQ / 2 + 4, str(8 - f), 10, c["title"],
-                      anchor="middle"))
+        o.append(T(BX + f * SQ + SQ / 2, BY + SQ * 8 + 20, "abcdefgh"[f],
+                   size=SIZE["micro"], mono=True, fill=c["text3"], anchor="middle"))
+        o.append(T(BX - 16, BY + f * SQ + SQ / 2 + 4, str(8 - f), size=SIZE["micro"],
+                   mono=True, fill=c["text3"], anchor="middle"))
 
-    # ---- move highlight, jumping to each destination square
+    # ---- destination highlight, stepping square to square
     hx, hy, kts = [], [], []
     for ply, mv in enumerate(MOVES):
         x, y = xy(mv[1])
@@ -142,7 +160,8 @@ def build(theme: str) -> str:
         hy.append(f"{y:.0f}")
         kts.append(f"{ply * PLY / LOOP:.4f}")
     hx.append(hx[-1]); hy.append(hy[-1]); kts.append("1")
-    o.append(f'<rect width="{SQ}" height="{SQ}" fill="{c["mark"]}" opacity="0.22">'
+    o.append(f'<rect x="{hx[0]}" y="{hy[0]}" width="{SQ}" height="{SQ}"'
+             f' fill="{c["amber"]}" opacity="0.20">'
              f'<animate attributeName="x" values="{";".join(hx)}" keyTimes="{";".join(kts)}"'
              f' calcMode="discrete" dur="{LOOP}s" repeatCount="indefinite"/>'
              f'<animate attributeName="y" values="{";".join(hy)}" keyTimes="{";".join(kts)}"'
@@ -150,66 +169,74 @@ def build(theme: str) -> str:
 
     # ---- pieces
     for pid, track in tracks.items():
-        p, col = meta[pid]
+        p_, col = meta[pid]
         x0, y0 = xy(track[0][1])
-        vals, kt = [], []
+        vals, kt = ["0 0"], ["0"]
         cur = track[0][1]
-        vals.append("0 0"); kt.append("0")
         for t, sq in track[1:]:
-            px, py = xy(sq)
+            px_, py_ = xy(sq)
             ox, oy = xy(cur)
-            # hold at the old square until the move starts, then glide over 45% of a ply
-            vals.append(f"{ox - x0:.0f} {oy - y0:.0f}"); kt.append(f"{t / LOOP:.4f}")
-            vals.append(f"{px - x0:.0f} {py - y0:.0f}")
+            vals.append(f"{ox - x0:.0f} {oy - y0:.0f}")
+            kt.append(f"{t / LOOP:.4f}")
+            vals.append(f"{px_ - x0:.0f} {py_ - y0:.0f}")
             kt.append(f"{min((t + PLY * 0.45) / LOOP, 1.0):.4f}")
             cur = sq
         vals.append(vals[-1]); kt.append("1")
-
+        # Eased, not linear. A piece sliding at constant speed reads as a sprite being
+        # dragged; an ease-out reads as a hand putting it down.
+        splines = ";".join([D.EASE] * (len(kt) - 1))
         anim = (f'<animateTransform attributeName="transform" type="translate"'
-                f' values="{";".join(vals)}" keyTimes="{";".join(kt)}" dur="{LOOP}s"'
-                f' repeatCount="indefinite"/>')
+                f' values="{";".join(vals)}" keyTimes="{";".join(kt)}"'
+                f' calcMode="spline" keySplines="{splines}"'
+                f' dur="{LOOP}s" repeatCount="indefinite"/>')
         fade = ""
         if pid in captured:
             tc = captured[pid] / LOOP
-            fade = (f'<animate attributeName="opacity"'
-                    f' values="1;1;0;0;1" keyTimes="0;{max(tc - 0.006, 0):.4f};'
-                    f'{tc:.4f};0.9990;1" dur="{LOOP}s" repeatCount="indefinite"/>')
-        glyph = (f'<text x="{x0 + SQ / 2:.0f}" y="{y0 + SQ * 0.72:.0f}" font-size="30"'
+            fade = (f'<animate attributeName="opacity" values="1;1;0;0;1"'
+                    f' keyTimes="0;{max(tc - 0.006, 0):.4f};{tc:.4f};0.9990;1"'
+                    f' dur="{LOOP}s" repeatCount="indefinite"/>')
+        glyph = (f'<text x="{x0 + SQ / 2:.0f}" y="{y0 + SQ * 0.73:.0f}" font-size="29"'
                  f' font-family="{PIECE_FONT}" fill="{wc if col == "w" else bc}"'
-                 f' text-anchor="middle">{GLYPH[p]}</text>')
+                 f' text-anchor="middle">{GLYPH[p_]}</text>')
         o.append(f"<g>{anim}{fade}{glyph}</g>")
 
-    # ---- move list, two columns, with the current move highlighted
-    MX, MY, MH = 452, 82, 26
-    o.append(text(MX, BY + 4, "MORPHY  vs  DUKE OF BRUNSWICK & COUNT ISOUARD", 12,
-                  c["chrome"], weight="bold"))
-    o.append(text(MX, BY + 22, "Paris Opera, 1858", 11, c["title"]))
+    # ---- move list
+    MX = BX + SQ * 8 + 74
+    o.append(T(MX, BY + 6, "MORPHY  vs  BRUNSWICK & ISOUARD", size=SIZE["lead"],
+               weight=700, fill=c["text"]))
+    o.append(T(MX, BY + 28, "Paris Opera, 1858  /  seventeen moves", size=SIZE["small"],
+               fill=c["text3"]))
+    o.append(D.rule(MX, BY + 44, W - 44 - MX, c))
 
-    rows = 9
+    rows, MY, MH, COLW = 9, BY + 78, 27, 330
     pos = []
-    for i, san in enumerate(SAN):
-        col_i, row_i = divmod(i, rows)
-        x = MX + col_i * 350
-        y = MY + 34 + row_i * MH
-        pos.append((x, y))
-        o.append(text(x, y, f"{i + 1:2d}.", 13, c["dim"]))
-        o.append(text(x + 30, y, san, 13, c["value"]))
+    for i in range(len(SAN)):
+        ci, ri = divmod(i, rows)
+        pos.append((MX + ci * COLW, MY + ri * MH))
 
     px, py, pkt = [], [], []
     for ply in range(len(MOVES)):
         x, y = pos[ply // 2]
-        px.append(f"{x - 8:.0f}"); py.append(f"{y - 15:.0f}")
+        px.append(f"{x - 10:.0f}")
+        py.append(f"{y - 17:.0f}")
         pkt.append(f"{ply * PLY / LOOP:.4f}")
     px.append(px[-1]); py.append(py[-1]); pkt.append("1")
-    o.append(f'<rect width="330" height="21" rx="4" fill="{c["violet"]}" opacity="0.14">'
+    o.append(f'<rect x="{px[0]}" y="{py[0]}" width="{COLW - 30}" height="24" rx="6"'
+             f' fill="{c["violet"]}" opacity="0.13">'
              f'<animate attributeName="x" values="{";".join(px)}" keyTimes="{";".join(pkt)}"'
              f' calcMode="discrete" dur="{LOOP}s" repeatCount="indefinite"/>'
              f'<animate attributeName="y" values="{";".join(py)}" keyTimes="{";".join(pkt)}"'
              f' calcMode="discrete" dur="{LOOP}s" repeatCount="indefinite"/></rect>')
 
-    o.append(text(MX, H - 22, "both rooks and the queen given away", 11, c["title"]))
-    o.append(text(MX, H - 8, "mate delivered by the only two pieces left on the board",
-                  11, c["title"]))
+    for i, san in enumerate(SAN):
+        x, y = pos[i]
+        o.append(T(x, y, f"{i + 1}.", size=SIZE["small"], mono=True, fill=c["text3"]))
+        o.append(T(x + 32, y, san, size=SIZE["small"], mono=True, fill=c["text2"]))
+
+    o.append(T(MX, H - 46, "both rooks and the queen, given away",
+               size=SIZE["small"], fill=c["text3"]))
+    o.append(T(MX, H - 26, "mate delivered by the only two pieces left on the board",
+               size=SIZE["small"], fill=c["text3"]))
     o.append("</svg>")
     return "".join(o)
 
@@ -217,9 +244,9 @@ def build(theme: str) -> str:
 def main() -> None:
     for theme in ("dark", "light"):
         s = build(theme)
-        p = f"../assets/chess-{theme}.svg"
-        open(p, "w", encoding="utf-8").write(s)
-        print(f"{p}: {len(s.encode()) / 1024:6.1f} KB   loop {LOOP:.1f}s")
+        path = f"../assets/chess-{theme}.svg"
+        open(path, "w", encoding="utf-8").write(s)
+        print(f"{path}: {len(s.encode()) / 1024:6.1f} KB   loop {LOOP:.1f}s")
 
 
 if __name__ == "__main__":

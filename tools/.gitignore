@@ -6,3 +6,4 @@ _gid_*.npy
 mask.npy
 __pycache__/
 *.pyc
+.fontcache/

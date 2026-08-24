@@ -20,9 +20,11 @@ import subprocess
 import sys
 import urllib.request
 
-from svgkit import MONO, THEMES, ch, esc, svg_open, text, window
+import design as D
+import fonts
+from design import SIZE, T, w
 
-W, H = 1180, 268
+W, H = 1180, 274
 BAR = 34
 USER = "Rohit-ATS"
 
@@ -127,66 +129,81 @@ def digest(u: dict) -> dict:
 
 
 LANG_COLOUR = {
-    "Python": "#3572A5", "TypeScript": "#3178C6", "JavaScript": "#F1E05A",
+    "Python": "#4B8BBE", "TypeScript": "#3178C6", "JavaScript": "#E8C33C",
     "C++": "#F34B7D", "Dart": "#00B4AB", "Shell": "#89E051", "Swift": "#F05138",
     "Kotlin": "#A97BFF", "Go": "#00ADD8", "Rust": "#DEA584", "Java": "#B07219",
-    "Ruby": "#701516", "C": "#555555", "PLpgSQL": "#336790", "Jupyter Notebook": "#DA5B0B",
+    "Ruby": "#CC342D", "C": "#7A8B99", "PLpgSQL": "#336790",
 }
+
+LABELS = ["CONTRIBUTIONS", "COMMITS", "PULL REQUESTS",
+          "CURRENT STREAK", "LONGEST STREAK", "REPOSITORIES"]
+NOTE = "public repositories  ·  regenerated twice daily by a github action"
 
 
 def build(theme: str, d: dict) -> str:
-    c = THEMES[theme]
-    chrome, _ = window(W, H, c, f"gh api / {USER} / public", titlebar=BAR)
-    o = [svg_open(W, H, f"GitHub statistics for {USER}",
-                  "Contribution, repository and language statistics, generated from the "
-                  "GitHub API by a scheduled Action."),
-         chrome]
+    """A stat card, not a dashboard of boxes.
 
-    # ---- headline tiles
-    # Stars and followers are deliberately not here. On an account opened in 2024 they
-    # measure reach and age rather than work, exactly like the github-readme-stats rank
-    # badge that this profile also hides. Six tiles that describe output, not audience.
-    tiles = [("CONTRIBUTIONS",  f"{d['contributions']:,}", c["mark"]),
-             ("COMMITS",        f"{d['commits']:,}",       c["chrome"]),
-             ("PULL REQUESTS",  f"{d['prs']:,}",           c["chrome"]),
-             ("CURRENT STREAK", f"{d['streak']:,} d",      c["warn"]),
-             ("LONGEST STREAK", f"{d['longest']:,} d",     c["warn"]),
-             ("REPOSITORIES",   f"{d['repos']:,}",         c["violet"])]
-    tw, th = 176, 74
-    for i, (label, value, col) in enumerate(tiles):
-        cx = 26 + (i % 3) * (tw + 12)
-        cy = 58 + (i // 3) * (th + 12)
-        o.append(f'<rect x="{cx}" y="{cy}" width="{tw}" height="{th}" rx="7"'
-                 f' fill="{c["panel"]}" stroke="{c["chrome_dim"]}"/>')
-        o.append(text(cx + 14, cy + 24, label, 9.5, c["title"]))
-        # Not locked with textLength: the tile value is the one number a reader
-        # actually looks at, and squeezing it to a computed width makes it look wrong.
-        o.append(f'<text x="{cx + 14}" y="{cy + 58}" font-size="30" font-weight="bold"'
-                 f' font-family="{MONO}" fill="{col}">{esc(value)}</text>')
+    Six bordered tiles gave every number the same weight and made the panel read as a
+    form. Here the numerals are large and light, the labels are small and tracked, and a
+    single glow marks the one figure worth reading first. Stars and followers are absent
+    on purpose: on an account opened in 2024 they measure reach and age, not work - the
+    same argument that makes hide_rank the right call on a github-readme-stats card."""
+    c = D.THEMES[theme]
+    vals = [f"{d['contributions']:,}", f"{d['commits']:,}", f"{d['prs']:,}",
+            f"{d['streak']}", f"{d['longest']}", f"{d['repos']}"]
+    units = [None, None, None, "days", "days", None]
 
-    # ---- language bars
-    LX = 610
-    o.append(text(LX, 76, "LANGUAGE", 12, c["chrome"], weight="bold"))
-    o.append(text(W - 26, 76, "by bytes, markup excluded", 10, c["title"], anchor="end"))
-    o.append(f'<rect x="{LX}" y="86" width="{W - 26 - LX}" height="1" fill="{c["rule"]}"/>')
+    chars = fonts.charset("".join(LABELS) + "".join(vals) + NOTE + "ACTIVITYLANGUAGE"
+                          + "".join(n for n, _ in d["langs"]) + "days%.,")
+    css, fb = fonts.embed_faces(chars)
 
-    bar_x = LX + 128
-    bar_w = W - 26 - bar_x - 58
-    for i, (name, pct) in enumerate(d["langs"]):
-        y = 112 + i * 26
-        col = LANG_COLOUR.get(name, c["chrome"])
-        o.append(text(LX, y + 4, name[:14], 12, c["value"]))
-        o.append(f'<rect x="{bar_x}" y="{y - 7}" width="{bar_w}" height="12" rx="6"'
-                 f' fill="{c["chrome_dim"]}" opacity="0.35"/>')
-        o.append(f'<rect x="{bar_x}" y="{y - 7}" width="0" height="12" rx="6" fill="{col}">'
+    o = [D.svg_open(W, H, f"GitHub activity for {USER}",
+                    "Contributions, commits, pull requests, streaks and repository count, "
+                    "with the language mix by bytes.", css),
+         D.defs(c), D.page(W, H, c)]
+
+    PAD = 44
+    o.append(D.eyebrow(PAD, 46, "ACTIVITY", c))
+    o.append(T(W - PAD, 46, NOTE, size=SIZE["micro"], fill=c["text3"], anchor="end"))
+    o.append(D.rule(PAD, 64, W - PAD * 2, c))
+
+    # ---- six figures, three across
+    COLS, COLW = 3, 206
+    for i, (label, val, unit) in enumerate(zip(LABELS, vals, units)):
+        cx = PAD + (i % COLS) * COLW
+        cy = 118 + (i // COLS) * 96
+        if i == 0:                       # the one number the eye should land on first
+            o.append(D.glow(cx + 46, cy - 12, 108))
+        o.append(T(cx, cy - 30, label, size=SIZE["micro"], weight=700,
+                   fill=c["text3"], track=0.18))
+        col = c["violet"] if i == 0 else c["text"]
+        o.append(T(cx, cy + 14, val, size=44, weight=300, fill=col, track=-0.01))
+        if unit:
+            o.append(T(cx + w(val, size=44, weight=300, track=-0.01) + 8, cy + 14,
+                       unit, size=SIZE["small"], fill=c["text3"]))
+
+    # ---- divider, then the language mix
+    LX = PAD + COLS * COLW + 24
+    o.append(f'<rect x="{LX - 26}" y="82" width="1" height="{H - 82 - 52}"'
+             f' fill="{c["line"]}"/>')
+    o.append(D.eyebrow(LX, 92, "LANGUAGE", c, colour=c["cyan"]))
+    o.append(T(W - PAD, 92, "by bytes, markup excluded", size=SIZE["micro"],
+               fill=c["text3"], anchor="end"))
+
+    bar_x, bar_w = LX + 116, W - PAD - 62 - (LX + 116)
+    for i, (name, pct) in enumerate(d["langs"][:5]):
+        y = 130 + i * 34
+        col = LANG_COLOUR.get(name, c["cyan"])
+        o.append(T(LX, y + 4, name, size=SIZE["small"], fill=c["text2"]))
+        o.append(f'<rect x="{bar_x}" y="{y - 6}" width="{bar_w}" height="9" rx="4.5"'
+                 f' fill="{c["surf2"]}"/>')
+        o.append(f'<rect x="{bar_x}" y="{y - 6}" width="0" height="9" rx="4.5" fill="{col}">'
                  f'<animate attributeName="width" values="0;{bar_w * pct / 100:.1f}"'
-                 f' dur="1.1s" begin="{0.15 * i:.2f}s" fill="freeze"'
-                 f' calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>')
-        o.append(text(W - 26, y + 4, f"{pct:5.1f}%", 11.5, c["title"], anchor="end"))
+                 f' dur="1.15s" begin="{0.12 * i:.2f}s" fill="freeze"'
+                 f' calcMode="spline" keySplines="{D.EASE}"/></rect>')
+        o.append(T(W - PAD, y + 4, f"{pct:.1f}%", size=SIZE["small"], mono=True,
+                   fill=c["text3"], anchor="end"))
 
-    o.append(text(26, H - 14,
-                  "regenerated twice a day by .github/workflows/assets.yml / "
-                  "no third-party service in the path", 10, c["title"], opacity=0.85))
     o.append("</svg>")
     return "".join(o)
 
