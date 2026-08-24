@@ -1,0 +1,8 @@
+# diagnostics and captures - regenerate with portrait_pipeline.py / verify.py
+diag_*.png
+shots/
+_band_*.npy
+_gid_*.npy
+mask.npy
+__pycache__/
+*.pyc

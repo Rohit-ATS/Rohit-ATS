@@ -1,0 +1,49 @@
+name: snake
+
+# Regenerates the contribution snake and pushes the rendered SVGs to the `output`
+# branch. The README reads them from there, not from main - keeping ~200KB of
+# regenerated artwork out of the source branch's history.
+
+on:
+  schedule:
+    # Twice a day. The contribution graph only changes when you push, so anything
+    # more frequent just burns Actions minutes.
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+# Required: the job pushes a branch. Without this the token is read-only and the
+# push step fails with a 403 that reads like an auth problem but is not one.
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Generate the snake
+        uses: Platane/snk/svg-only@v3
+        id: snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # The first colour in color_dots is the EMPTY cell, not the lightest
+          # contribution level. On dark it must be a visible slate: against GitHub's
+          # #0d1117 page a near-black empty cell vanishes and the grid looks broken -
+          # you get a snake swimming through nothing.
+          outputs: |
+            dist/snake-dark.svg?color_snake=%23a78bfa&color_dots=%232d3343,%23164e5c,%231a7f8f,%2322d3ee,%2367e8f9
+            dist/snake-light.svg?color_snake=%237c3aed&color_dots=%23e9eef5,%23bfe3ec,%237fc9dc,%232ba3c0,%230891b2
+
+      - name: Push to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

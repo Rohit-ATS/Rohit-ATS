@@ -1,16 +1,18 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/header-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/header-light.svg">
-  <img alt="Rohit Maruri — Computer Science at San Francisco Bay University. I build developer infrastructure that answers the questions other tools structurally cannot." src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/header-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-light.svg">
+  <img alt="Rohit Maruri - developer infrastructure. Computer Science at San Francisco Bay University. Graph databases, semantic caches, agent runtimes." src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-dark.svg" width="100%">
 </picture>
 
-<br>
+<br><br>
 
-[![Blast Radius](https://img.shields.io/badge/flagship-Blast%20Radius-2f6bff?style=flat-square&labelColor=0d1117)](https://github.com/Rohit-ATS/blast-radius)
-[![Focus](https://img.shields.io/badge/focus-graph%20%C2%B7%20AI%20%C2%B7%20systems-0f9b8e?style=flat-square&labelColor=0d1117)](#the-stack)
-[![Email](https://img.shields.io/badge/email-rohitmaruriats%40gmail.com-5c6472?style=flat-square&labelColor=0d1117)](mailto:rohitmaruriats@gmail.com)
+[![Email](<https://img.shields.io/badge/Email-0A101F?style=for-the-badge&labelColor=0A101F&logo=gmail&logoColor=10B981>)](mailto:rohitmaruriats@gmail.com)
+&nbsp;·&nbsp;
+[![Blast Radius](<https://img.shields.io/badge/Blast_Radius-0A101F?style=for-the-badge&labelColor=0A101F&logo=neo4j&logoColor=22D3EE>)](https://github.com/Rohit-ATS/blast-radius)
+&nbsp;·&nbsp;
+[![The stack](<https://img.shields.io/badge/The_Stack-0A101F?style=for-the-badge&labelColor=0A101F&logo=typescript&logoColor=A78BFA>)](#the-stack)
 
 </div>
 
@@ -127,6 +129,34 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-light.svg">
   <img alt="Stack: Python, TypeScript, SQL and Cypher, Bash · HydraDB, PostgreSQL, pgvector, SQLite, Redis, Prisma · Claude API, MCP servers, Ollama, Whisper, embeddings · React 19, Next.js 16, Electron, Tailwind v4 · Docker, FastAPI, Render, Vercel, GitHub Actions" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-dark.svg" width="100%">
 </picture>
+
+<br>
+
+## Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0">
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=FFFFFF&amp;border=A9CFDC&amp;stroke=A9CFDC&amp;ring=0891B2&amp;fire=059669&amp;currStreakNum=1E293B&amp;sideNums=1E293B&amp;currStreakLabel=0891B2&amp;sideLabels=64748B&amp;dates=64748B">
+  <img alt="Contribution streak: current streak, total contributions, and longest streak" src="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0" width="100%">
+</picture>
+
+<!-- SNAKE: added once .github/workflows/snake.yml has run green and the `output`
+     branch exists. Referencing it before then renders a broken image. -->
+
+<!-- STATS CARDS - waiting on a self-hosted instance.
+     The public github-readme-stats deployment is returning 503 on every endpoint
+     (verified /api, /api/top-langs and /api/pin), which is exactly why the cards are
+     not wired to it. Once you deploy your fork at github.com/Rohit-ATS/github-readme-stats
+     to Vercel with PAT_1 set, replace INSTANCE below and uncomment.
+
+     Self-hosting also makes your 35 private contributions countable - the public
+     instance cannot see them at all.
+
+<div align="center">
+  <img width="49%" src="https://INSTANCE/api?username=Rohit-ATS&amp;show_icons=true&amp;hide_rank=true&amp;include_all_commits=true&amp;count_private=true&amp;bg_color=0A101F&amp;title_color=22D3EE&amp;text_color=C7D2E4&amp;icon_color=10B981&amp;border_color=1B4A5C&amp;border_radius=8" alt="GitHub stats">
+  <img width="49%" src="https://INSTANCE/api/top-langs?username=Rohit-ATS&amp;layout=compact&amp;langs_count=8&amp;hide=html,css&amp;bg_color=0A101F&amp;title_color=22D3EE&amp;text_color=C7D2E4&amp;border_color=1B4A5C&amp;border_radius=8" alt="Top languages">
+</div>
+-->
 
 <br>
 

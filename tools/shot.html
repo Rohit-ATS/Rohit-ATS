@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><title>loading</title>
+<style>html,body{margin:0;padding:0}#host svg{display:block;width:1180px;height:610px}</style>
+<div id="host"></div>
+<script>
+const q=new URLSearchParams(location.search);
+const theme=q.get('theme')||'dark';
+const T=parseFloat(q.get('t')||'0');
+document.documentElement.style.background = theme==='dark' ? '#0d1117' : '#ffffff';
+fetch('../assets/banner-'+theme+'.svg').then(r=>r.text()).then(txt=>{
+  document.getElementById('host').innerHTML=txt;
+  const svg=document.querySelector('#host svg');
+  svg.pauseAnimations();
+  svg.setCurrentTime(T);
+  document.title='ready t='+T;
+});
+</script>
