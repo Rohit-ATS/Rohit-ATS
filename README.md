@@ -150,18 +150,25 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
   <img alt="A snake eating a year of my contribution graph" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg" width="100%">
 </picture>
 
-<!-- STATS CARDS - waiting on a self-hosted instance.
-     The public github-readme-stats deployment is returning 503 on every endpoint
-     (verified /api, /api/top-langs and /api/pin), which is exactly why the cards are
-     not wired to it. Once you deploy your fork at github.com/Rohit-ATS/github-readme-stats
-     to Vercel with PAT_1 set, replace INSTANCE below and uncomment.
+<!-- STREAK CARD, if you ever re-theme it: streak-stats.demolab.com recomputes from
+     scratch for every distinct URL, and a cold one takes 10-30s to first byte (measured;
+     it also returns the odd 503). GitHub's camo proxy gives up well before that, caches
+     the failure, and the card renders as alt text.
 
-     Self-hosting also makes your 35 private contributions countable - the public
-     instance cannot see them at all.
+     Fix: request the new URL directly until it 200s quickly, THEN request the camo URL
+     from the rendered page until that 200s too. Once camo has cached it, visitors are
+     served from camo and it is fast. Changing any colour param starts this over.
+
+     STATS CARDS - waiting on a self-hosted instance. The public github-readme-stats
+     deployment returns 503 on every endpoint (verified /api, /api/top-langs, /api/pin),
+     which is why the two cards below are not wired to it. Deploy the fork at
+     github.com/Rohit-ATS/github-readme-stats to Vercel with PAT_1 set, replace INSTANCE,
+     and uncomment. Self-hosting also makes the 35 private contributions countable - the
+     public instance cannot see them at all.
 
 <div align="center">
-  <img width="49%" src="https://INSTANCE/api?username=Rohit-ATS&amp;show_icons=true&amp;hide_rank=true&amp;include_all_commits=true&amp;count_private=true&amp;bg_color=0A101F&amp;title_color=22D3EE&amp;text_color=C7D2E4&amp;icon_color=10B981&amp;border_color=1B4A5C&amp;border_radius=8" alt="GitHub stats">
-  <img width="49%" src="https://INSTANCE/api/top-langs?username=Rohit-ATS&amp;layout=compact&amp;langs_count=8&amp;hide=html,css&amp;bg_color=0A101F&amp;title_color=22D3EE&amp;text_color=C7D2E4&amp;border_color=1B4A5C&amp;border_radius=8" alt="Top languages">
+  <img width="49%" src="https://INSTANCE/api?username=Rohit-ATS&show_icons=true&hide_rank=true&include_all_commits=true&count_private=true&bg_color=0A101F&title_color=22D3EE&text_color=C7D2E4&icon_color=10B981&border_color=1B4A5C&border_radius=8" alt="GitHub stats">
+  <img width="49%" src="https://INSTANCE/api/top-langs?username=Rohit-ATS&layout=compact&langs_count=8&hide=html,css&bg_color=0A101F&title_color=22D3EE&text_color=C7D2E4&border_color=1B4A5C&border_radius=8" alt="Top languages">
 </div>
 -->
 
