@@ -34,6 +34,7 @@ from scipy.optimize import linear_sum_assignment
 
 import design as D
 import fonts
+import nature as N
 from design import SIZE, T, w
 
 W, H = 1180, 620
@@ -227,7 +228,19 @@ def build(theme: str) -> tuple[str, dict]:
              f'<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
              f'<mask id="mFade"><rect width="{W}" height="{H}" fill="url(#gFade)"/></mask>'
              f'</defs>')
-    o.append(f'<g clip-path="url(#pageClip)"><g mask="url(#mFade)">{port}</g></g>')
+    o.append(f'<g clip-path="url(#pageClip)"><g mask="url(#mFade)">{port}</g>')
+
+    # A verge under the portrait, so the face dissolves downward into grass rather than
+    # just fading out. Same marks, so the handover is invisible. It is kept to the right
+    # of x=610: grass growing through the contact line would be unreadable.
+    o.append(N.ridge(560, H - 4, W - 500, 34, seed=61, colour=c["violet"],
+                     opacity=0.16, band=16, pitch=5, freq=2.4))
+    o.append(N.grass(575, H - 12, W - 545, blades=140, h_min=8, h_max=20,
+                     colour=c["cyan"], opacity=0.3, sway_frac=0.2, seed=29, uid="hb"))
+    o.append(N.grass(560, H + 14, W - 520, blades=190, h_min=16, h_max=50,
+                     colour=c["green"], colour2=c["cyan"], opacity=0.62,
+                     sway_frac=0.4, seed=17, uid="hg"))
+    o.append('</g>')
 
     # ---- edition mark, running up the far left margin
     o.append(f'<g transform="translate(30 {H - 56}) rotate(-90)">'

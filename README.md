@@ -175,6 +175,14 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
 
 <br>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/landscape-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/landscape-light.svg">
+  <img alt="San Francisco Bay drawn in dots: ridge lines dissolving into scattered cells, an aurora, and a foreground of swaying grass" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/landscape-dark.svg" width="100%">
+</picture>
+
+<br>
+
 ## Off the clock
 
 Paris, 1858. Morphy is at the opera, playing two noblemen sharing a board. He gives
