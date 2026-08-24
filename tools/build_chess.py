@@ -137,7 +137,7 @@ def build(theme: str) -> str:
     o.append(D.eyebrow(44, 46, "OFF THE CLOCK", c, colour=c["amber"]))
     o.append(T(W - 44, 46, "morphy / opera / 1858", size=SIZE["micro"], mono=True,
                fill=c["text3"], anchor="end"))
-    o.append(D.rule(44, 64, W - 88, c))
+    o.append(D.dot_rule(44, 64, W - 88, c))
 
     # ---- board
     o.append(D.glow(BX + SQ * 4, BY + SQ * 4, 250))
@@ -206,7 +206,7 @@ def build(theme: str) -> str:
                weight=700, fill=c["text"]))
     o.append(T(MX, BY + 28, "Paris Opera, 1858  /  seventeen moves", size=SIZE["small"],
                fill=c["text3"]))
-    o.append(D.rule(MX, BY + 44, W - 44 - MX, c))
+    o.append(D.dot_rule(MX, BY + 44, W - 44 - MX, c))
 
     rows, MY, MH, COLW = 9, BY + 78, 27, 330
     pos = []

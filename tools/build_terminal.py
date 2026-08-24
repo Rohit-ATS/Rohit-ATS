@@ -96,7 +96,7 @@ def build(theme: str) -> str:
     o.append(D.eyebrow(44, 46, "INCIDENT REPLAY", c, colour=c["rose"]))
     o.append(T(W - 44, 46, "blast-radius --trace", size=SIZE["micro"], mono=True,
                fill=c["text3"], anchor="end"))
-    o.append(D.rule(44, 64, W - 88, c))
+    o.append(D.dot_rule(44, 64, W - 88, c))
 
     y = Y0
     o.append(prompt_line(y, CMD1, "tc1", c))
@@ -147,7 +147,7 @@ def build(theme: str) -> str:
                         LOOP, 10.4, 14.3))
         fx += w(txt, size=FS, mono=True) + 8
 
-    o.append(D.rule(44, H - 46, W - 88, c))
+    o.append(D.dot_rule(44, H - 46, W - 88, c))
     o.append(T(44, H - 24, "27k lines  /  381 tests  /  MIT  /  built solo over a hackathon weekend",
                size=SIZE["micro"], fill=c["text3"]))
     o.append("</svg>")

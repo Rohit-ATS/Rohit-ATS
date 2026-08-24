@@ -47,7 +47,7 @@ def build(theme: str) -> str:
     o.append(D.eyebrow(PAD, 46, "THE STACK", c))
     o.append(T(W - PAD, 46, "what goes where", size=SIZE["micro"], fill=c["text3"],
                anchor="end"))
-    o.append(D.rule(PAD, 64, W - PAD * 2, c))
+    o.append(D.dot_rule(PAD, 64, W - PAD * 2, c))
 
     colw = (W - PAD * 2) / len(COLUMNS)
     for i, (title, key, items) in enumerate(COLUMNS):

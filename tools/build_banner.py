@@ -36,15 +36,16 @@ import design as D
 import fonts
 from design import SIZE, T, w
 
-W, H = 1180, 540
+W, H = 1180, 620
 
-CARD_X, CARD_Y, CARD_W, CARD_H = 28, 28, 396, 484
-PORT_X, PORT_Y = 53.0, 80.0
-CELL = 1.153
+# The portrait runs large and bleeds off the right edge. A face cropped by the frame
+# reads as a photograph placed in a layout; a face floating inside a bordered card reads
+# as a thumbnail, which is what the previous version looked like.
+PORT_X, PORT_Y = 720.0, 30.0
+CELL = 1.75
 GRID_W, GRID_H = 300, 340
 
-RX, RW = 456, 696                     # right column
-RR = RX + RW                          # its right edge
+LX, LW = 64, 616                      # the type column
 
 INTRO_GROUPS, INTRO_FADE, INTRO_SPREAD, INTRO_END = 60, 0.55, 2.0, 3.2
 BANDS, DRIFT, DRIFT_NOISE = 94, 0.42, 4.0
@@ -61,13 +62,15 @@ KTS = ";".join(f"{k:.5f}" for k in KT)
 NAME = "ROHIT MARURI"
 ROLE = "Developer Infrastructure"
 META = "B.S. Computer Science  ·  San Francisco Bay University"
-BIO = ["I build the tool when the popular one is the wrong shape for the question.",
-       "Graph traversals, semantic caches, agent runtimes."]
+BIO = ["I build the tool when the popular one is the wrong shape",
+       "for the question."]
 STATUS = "OPEN TO INTERNSHIPS"
-STACK = ["Python", "TypeScript", "HydraDB", "PostgreSQL", "pgvector", "SQLite",
-         "Redis", "FastAPI", "React 19", "Next.js 16", "Electron", "Docker",
-         "Vercel", "GitHub Actions"]
-REACH = ["rohitmaruriats@gmail.com", "in/rohitmaruri", "github.com/Rohit-ATS"]
+# Set as two run-on lines of small caps rather than as pills. A row of rounded chips
+# is the single most template-looking element available, and it wastes the width.
+STACK = ["PYTHON · TYPESCRIPT · HYDRADB · POSTGRESQL · PGVECTOR · SQLITE · REDIS",
+         "FASTAPI · REACT 19 · NEXT.JS 16 · ELECTRON · DOCKER · VERCEL · GH ACTIONS"]
+REACH = "rohitmaruriats@gmail.com   ·   in/rohitmaruri   ·   github.com/Rohit-ATS"
+EDGE = "PROFILE — MMXXVI"
 CAPTION = "300 × 340 · floyd–steinberg · 1-bit"
 
 
@@ -197,81 +200,89 @@ def build(theme: str) -> tuple[str, dict]:
     dots = np.load(f"portrait_{theme}.npy")
     logo = np.load("logo_rm.npy")
 
-    chars = fonts.charset(NAME + ROLE + META + STATUS + CAPTION
-                          + "".join(BIO) + "".join(STACK) + "".join(REACH)
-                          + "PROFILESTACKREACHVISUAL.MAP")
+    chars = fonts.charset(NAME + ROLE + META + STATUS + CAPTION + EDGE + REACH
+                          + "".join(BIO) + "".join(STACK) + "STACKVISUAL.MAP")
     css, font_bytes = fonts.embed_faces(chars)
 
     port, band, gid = portrait_layers(dots, logo, c)
 
     o = [D.svg_open(W, H, "Rohit Maruri — developer infrastructure",
-                    "A dithered portrait that dissolves into an RM monogram, beside a "
-                    "name, role, stack and contact card.", css),
-         D.defs(c), D.page(W, H, c)]
+                    "A dithered portrait that dissolves into an RM monogram, set beside "
+                    "a name, role, stack and contact details.", css),
+         D.defs(c),
+         D.page(W, H, c)]
 
-    # ---- portrait, holding the panel's single light source
-    o.append(D.glow(CARD_X + CARD_W / 2, CARD_Y + CARD_H * 0.42, 250))
-    o.append(D.card(CARD_X, CARD_Y, CARD_W, CARD_H, c))
-    o.append(D.eyebrow(CARD_X + 22, CARD_Y + 30, "VISUAL.MAP", c))
-    o.append(port)
-    o.append(T(CARD_X + CARD_W / 2, CARD_Y + CARD_H - 22, CAPTION, size=SIZE["micro"],
-               mono=True, fill=c["text3"], anchor="middle"))
+    # the panel's one light source, behind the face
+    o.append(D.glow(PORT_X + GRID_W * CELL * 0.42, PORT_Y + GRID_H * CELL * 0.40, 360))
 
-    # ---- identity
-    y = CARD_Y + 30
-    o.append(D.eyebrow(RX, y, "PROFILE", c))
+    # Portrait: clipped to the page so the bleed stays clean at the rounded corner, and
+    # masked so the bottom dissolves into the background. Without the mask the shoulders
+    # are simply sliced off by the frame, which reads as a crop accident rather than as
+    # a bleed.
+    o.append(f'<defs><clipPath id="pageClip"><rect width="{W}" height="{H}" rx="18"/>'
+             f'</clipPath>'
+             f'<linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">'
+             f'<stop offset="0" stop-color="#fff" stop-opacity="1"/>'
+             f'<stop offset="0.74" stop-color="#fff" stop-opacity="1"/>'
+             f'<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+             f'<mask id="mFade"><rect width="{W}" height="{H}" fill="url(#gFade)"/></mask>'
+             f'</defs>')
+    o.append(f'<g clip-path="url(#pageClip)"><g mask="url(#mFade)">{port}</g></g>')
 
-    sw = w(STATUS, size=SIZE["tiny"], weight=700, mono=True, track=0.1) + 42
-    o.append(f'<rect x="{RR - sw:.1f}" y="{y - 15:.1f}" width="{sw:.1f}" height="24" rx="12"'
-             f' fill="{c["surf2"]}" stroke="{c["line"]}"/>')
-    o.append(f'<circle cx="{RR - sw + 15:.1f}" cy="{y - 3:.1f}" r="3.5" fill="{c["green"]}">'
-             f'<animate attributeName="opacity" values="1;0.25;1" dur="2.4s"'
+    # ---- edition mark, running up the far left margin
+    o.append(f'<g transform="translate(30 {H - 56}) rotate(-90)">'
+             + T(0, 0, EDGE, size=SIZE["micro"], weight=700, mono=True,
+                 fill=c["text3"], track=0.4) + '</g>')
+
+    # ---- availability
+    o.append(f'<circle cx="{LX + 4}" cy="{68}" r="4" fill="{c["green"]}">'
+             f'<animate attributeName="opacity" values="1;0.2;1" dur="2.6s"'
              f' calcMode="spline" keyTimes="0;0.5;1" keySplines="{D.EASE};{D.EASE}"'
              f' repeatCount="indefinite"/></circle>')
-    o.append(T(RR - sw + 27, y + 1, STATUS, size=SIZE["tiny"], weight=700, mono=True,
-               fill=c["green"], track=0.1))
+    o.append(T(LX + 18, 72, STATUS, size=SIZE["tiny"], weight=700, mono=True,
+               fill=c["green"], track=0.22))
 
-    o.append(T(RX, y + 66, NAME, size=SIZE["hero"], weight=300, fill=c["text"], track=0.012))
-    o.append(f'<rect x="{RX}" y="{y + 84}" width="76" height="3" rx="1.5" fill="url(#gAccent)"/>')
-    o.append(T(RX, y + 122, ROLE, size=SIZE["lead"], weight=500, fill=c["violet"]))
-    o.append(T(RX, y + 148, META, size=SIZE["small"], fill=c["text3"]))
+    # ---- the name, at a size that is actually the first thing you see
+    o.append(T(LX - 4, 196, "ROHIT", size=SIZE["mega"], weight=300,
+               fill=c["text"], track=-0.02))
+    o.append(T(LX - 4, 290, "MARURI", size=SIZE["mega"], weight=300,
+               fill=c["text"], track=-0.02))
+    o.append(D.dot_rule(LX, 320, 330, c, pitch=8, r=1.7))
+
+    o.append(T(LX, 360, ROLE.upper(), size=SIZE["body"], weight=700,
+               fill=c["violet"], track=0.24))
+    o.append(T(LX, 386, META, size=SIZE["small"], fill=c["text3"]))
 
     for i, line in enumerate(BIO):
-        o.append(T(RX, y + 186 + i * 23, line, size=SIZE["body"], fill=c["text2"]))
+        o.append(T(LX, 428 + i * 24, line, size=SIZE["lead"], weight=300,
+                   fill=c["text2"]))
 
-    # ---- stack
-    y2 = CARD_Y + 268
-    o.append(D.rule(RX, y2, RW, c))
-    o.append(D.eyebrow(RX, y2 + 28, "STACK", c, colour=c["cyan"]))
-    accents = {"Python": c["cyan"], "TypeScript": c["cyan"], "HydraDB": c["violet"]}
-    chips, used = D.flow_chips(RX, y2 + 42, STACK, c, RW, accents=accents)
-    o.append(chips)
+    # ---- stack, as text rather than as pills
+    o.append(D.eyebrow(LX, 502, "STACK", c, colour=c["cyan"]))
+    for i, line in enumerate(STACK):
+        o.append(T(LX, 528 + i * 21, line, size=SIZE["tiny"], mono=True,
+                   fill=c["text2"], track=0.06))
 
-    # ---- reach
-    y3 = y2 + 42 + used + 12
-    o.append(D.rule(RX, y3, RW, c))
-    o.append(D.eyebrow(RX, y3 + 28, "REACH", c, colour=c["green"]))
-    reach, _ = D.flow_chips(RX, y3 + 42, REACH, c, RW,
-                            accents={k: c["text"] for k in REACH})
-    o.append(reach)
+    o.append(D.dot_rule(LX, 566, LW - 40, c, pitch=8, r=1.5))
+    o.append(T(LX, 592, REACH, size=SIZE["small"], mono=True, fill=c["text3"]))
 
     o.append("</svg>")
     svg = "".join(o)
     np.save(f"_band_{theme}.npy", band)
     np.save(f"_gid_{theme}.npy", gid)
     return svg, dict(bytes=len(svg.encode()), fonts=font_bytes, dots=int(dots.sum()),
-                     bands=int(len(set(band.tolist()))), bottom=y3 + 42 + 26)
+                     bands=int(len(set(band.tolist()))), bottom=600)
 
 
 def main() -> None:
-    import os
-    os.makedirs("../assets", exist_ok=True)
+    import os as _os
+    _os.makedirs("../assets", exist_ok=True)
     for theme in ("dark", "light"):
         svg, st = build(theme)
         p = f"../assets/banner-{theme}.svg"
         open(p, "w", encoding="utf-8").write(svg)
         print(f"{p}: {st['bytes'] / 1024:7.1f} KB (fonts {st['fonts'] / 1024:4.1f} KB)"
-              f"  dots={st['dots']} bands={st['bands']}  content ends y={st['bottom']:.0f}/{H}")
+              f"  dots={st['dots']} bands={st['bands']}")
 
 
 if __name__ == "__main__":

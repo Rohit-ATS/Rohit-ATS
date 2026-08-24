@@ -24,7 +24,7 @@ import design as D
 import fonts
 from design import SIZE, T, w
 
-W, H = 1180, 274
+W, H = 1180, 344
 BAR = 34
 USER = "Rohit-ATS"
 
@@ -129,80 +129,86 @@ def digest(u: dict) -> dict:
 
 
 LANG_COLOUR = {
-    "Python": "#4B8BBE", "TypeScript": "#3178C6", "JavaScript": "#E8C33C",
-    "C++": "#F34B7D", "Dart": "#00B4AB", "Shell": "#89E051", "Swift": "#F05138",
-    "Kotlin": "#A97BFF", "Go": "#00ADD8", "Rust": "#DEA584", "Java": "#B07219",
-    "Ruby": "#CC342D", "C": "#7A8B99", "PLpgSQL": "#336790",
+    "Python": "#5A9FD4", "TypeScript": "#4B8FE0", "JavaScript": "#F0D14C",
+    "C++": "#F4628B", "Dart": "#00C4BA", "Shell": "#93E86A", "Swift": "#FF6B3D",
+    "Kotlin": "#B98BFF", "Go": "#3BC5E8", "Rust": "#E8AE7F", "Java": "#C4823B",
+    "Ruby": "#E04A45", "C": "#8A9AAA", "PLpgSQL": "#4A87C4",
 }
 
-LABELS = ["CONTRIBUTIONS", "COMMITS", "PULL REQUESTS",
-          "CURRENT STREAK", "LONGEST STREAK", "REPOSITORIES"]
-NOTE = "public repositories  ·  regenerated twice daily by a github action"
+SMALL = [("COMMITS", "commits", None), ("PULL REQUESTS", "prs", None),
+         ("CURRENT STREAK", "streak", "d"), ("LONGEST STREAK", "longest", "d")]
+NOTE = "public repositories  ·  regenerated twice daily"
 
 
 def build(theme: str, d: dict) -> str:
-    """A stat card, not a dashboard of boxes.
+    """Activity as a dot-matrix readout.
 
-    Six bordered tiles gave every number the same weight and made the panel read as a
-    form. Here the numerals are large and light, the labels are small and tracked, and a
-    single glow marks the one figure worth reading first. Stars and followers are absent
-    on purpose: on an account opened in 2024 they measure reach and age, not work - the
-    same argument that makes hide_rank the right call on a github-readme-stats card."""
+    The headline figure is drawn in the same material as the portrait - a field of dots
+    on a 5x7 grid, unlit cells included - so the card belongs to the same page rather
+    than looking like a chart library dropped next to it. The supporting figures are set
+    in type, because six identical dot numbers would flatten the hierarchy that makes
+    the headline worth looking at.
+
+    Stars and followers are deliberately absent: on an account opened in 2024 they
+    measure reach and age rather than work, the same argument that makes hide_rank the
+    right call on a github-readme-stats card.
+    """
     c = D.THEMES[theme]
-    vals = [f"{d['contributions']:,}", f"{d['commits']:,}", f"{d['prs']:,}",
-            f"{d['streak']}", f"{d['longest']}", f"{d['repos']}"]
-    units = [None, None, None, "days", "days", None]
+    hero = f"{d['contributions']:,}"
 
-    chars = fonts.charset("".join(LABELS) + "".join(vals) + NOTE + "ACTIVITYLANGUAGE"
-                          + "".join(n for n, _ in d["langs"]) + "days%.,")
-    css, fb = fonts.embed_faces(chars)
+    chars = fonts.charset("".join(l for l, _, _ in SMALL) + NOTE
+                          + "ACTIVITYLANGUAGECONTRIBUTIONS IN THE LAST YEAR"
+                          + "by bytes, markup excludeddays"
+                          + "".join(n for n, _ in d["langs"]) + "%.,")
+    css, _ = fonts.embed_faces(chars)
 
     o = [D.svg_open(W, H, f"GitHub activity for {USER}",
-                    "Contributions, commits, pull requests, streaks and repository count, "
-                    "with the language mix by bytes.", css),
-         D.defs(c), D.page(W, H, c)]
+                    "Contributions, commits, pull requests and streaks, with the "
+                    "language mix by bytes.", css),
+         D.defs(c),
+         D.page(W, H, c)]
 
-    PAD = 44
-    o.append(D.eyebrow(PAD, 46, "ACTIVITY", c))
-    o.append(T(W - PAD, 46, NOTE, size=SIZE["micro"], fill=c["text3"], anchor="end"))
-    o.append(D.rule(PAD, 64, W - PAD * 2, c))
+    PAD = 64
+    o.append(D.eyebrow(PAD, 48, "ACTIVITY", c))
+    o.append(T(W - PAD, 48, NOTE, size=SIZE["micro"], fill=c["text3"], anchor="end"))
+    o.append(D.dot_rule(PAD, 66, W - PAD * 2, c, pitch=8, r=1.5, fade=False))
 
-    # ---- six figures, three across
-    COLS, COLW = 3, 206
-    for i, (label, val, unit) in enumerate(zip(LABELS, vals, units)):
-        cx = PAD + (i % COLS) * COLW
-        cy = 118 + (i // COLS) * 96
-        if i == 0:                       # the one number the eye should land on first
-            o.append(D.glow(cx + 46, cy - 12, 108))
-        o.append(T(cx, cy - 30, label, size=SIZE["micro"], weight=700,
-                   fill=c["text3"], track=0.18))
-        col = c["violet"] if i == 0 else c["text"]
-        o.append(T(cx, cy + 14, val, size=44, weight=300, fill=col, track=-0.01))
-        if unit:
-            o.append(T(cx + w(val, size=44, weight=300, track=-0.01) + 8, cy + 14,
-                       unit, size=SIZE["small"], fill=c["text3"]))
+    # ---- the headline figure, as lit and unlit cells
+    o.append(D.glow(PAD + 110, 128, 200))
+    marks, _ = D.dot_number(PAD, 100, hero, pitch=10.5, r=3.7,
+                            fill=c["violet"], dim=c["line"])
+    o.append(marks)
+    o.append(T(PAD, 196, "CONTRIBUTIONS IN THE LAST YEAR", size=SIZE["micro"],
+               weight=700, fill=c["text3"], track=0.24))
 
-    # ---- divider, then the language mix
-    LX = PAD + COLS * COLW + 24
-    o.append(f'<rect x="{LX - 26}" y="82" width="1" height="{H - 82 - 52}"'
-             f' fill="{c["line"]}"/>')
-    o.append(D.eyebrow(LX, 92, "LANGUAGE", c, colour=c["cyan"]))
-    o.append(T(W - PAD, 92, "by bytes, markup excluded", size=SIZE["micro"],
+    # ---- language mix, right of the headline
+    LX = 640
+    o.append(D.eyebrow(LX, 100, "LANGUAGE", c, colour=c["cyan"]))
+    o.append(T(W - PAD, 100, "by bytes, markup excluded", size=SIZE["micro"],
                fill=c["text3"], anchor="end"))
-
-    bar_x, bar_w = LX + 116, W - PAD - 62 - (LX + 116)
-    for i, (name, pct) in enumerate(d["langs"][:5]):
-        y = 130 + i * 34
-        col = LANG_COLOUR.get(name, c["cyan"])
+    bar_x = LX + 132
+    bar_w = W - PAD - 66 - bar_x
+    for i, (name, pct) in enumerate(d["langs"][:4]):
+        y = 136 + i * 32
         o.append(T(LX, y + 4, name, size=SIZE["small"], fill=c["text2"]))
-        o.append(f'<rect x="{bar_x}" y="{y - 6}" width="{bar_w}" height="9" rx="4.5"'
-                 f' fill="{c["surf2"]}"/>')
-        o.append(f'<rect x="{bar_x}" y="{y - 6}" width="0" height="9" rx="4.5" fill="{col}">'
-                 f'<animate attributeName="width" values="0;{bar_w * pct / 100:.1f}"'
-                 f' dur="1.15s" begin="{0.12 * i:.2f}s" fill="freeze"'
-                 f' calcMode="spline" keySplines="{D.EASE}"/></rect>')
+        o.append(D.dot_bar(bar_x, y, bar_w, pct / 100, c, pitch=8, r=2.7,
+                           fill=LANG_COLOUR.get(name, c["cyan"]), begin=0.15 * i))
         o.append(T(W - PAD, y + 4, f"{pct:.1f}%", size=SIZE["small"], mono=True,
                    fill=c["text3"], anchor="end"))
+
+    # ---- supporting figures, across the foot
+    o.append(D.dot_rule(PAD, 246, W - PAD * 2, c, pitch=8, r=1.5, fade=False))
+    colw = (W - PAD * 2) / len(SMALL)
+    for i, (label, key, unit) in enumerate(SMALL):
+        x = PAD + i * colw
+        val = f"{d[key]:,}"
+        o.append(T(x, 300, val, size=SIZE["head"], weight=300, fill=c["text"],
+                   track=-0.01))
+        if unit:
+            o.append(T(x + w(val, size=SIZE["head"], weight=300, track=-0.01) + 6, 300,
+                       unit, size=SIZE["small"], fill=c["text3"]))
+        o.append(T(x, 322, label, size=SIZE["micro"], weight=700, fill=c["text3"],
+                   track=0.2))
 
     o.append("</svg>")
     return "".join(o)
@@ -212,13 +218,13 @@ def main() -> None:
     out = sys.argv[1] if len(sys.argv) > 1 else "../assets"
     d = digest(fetch())
     print("stats:", {k: v for k, v in d.items() if k != "langs"})
-    print("langs:", [(n, round(p, 1)) for n, p in d["langs"]])
+    print("langs:", [(n, round(pc, 1)) for n, pc in d["langs"]])
     os.makedirs(out, exist_ok=True)
     for theme in ("dark", "light"):
-        s = build(theme, d)
-        p = os.path.join(out, f"stats-{theme}.svg")
-        open(p, "w", encoding="utf-8").write(s)
-        print(f"{p}: {len(s.encode()) / 1024:6.1f} KB")
+        svg = build(theme, d)
+        path = os.path.join(out, f"stats-{theme}.svg")
+        open(path, "w", encoding="utf-8").write(svg)
+        print(f"{path}: {len(svg.encode()) / 1024:6.1f} KB")
 
 
 if __name__ == "__main__":

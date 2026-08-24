@@ -160,7 +160,7 @@ def build(theme: str) -> str:
     o.append(D.eyebrow(44, 46, "THE WORK, AS A GRAPH", c))
     o.append(T(W - 44, 46, "shared technology is a shared node", size=SIZE["micro"],
                fill=c["text3"], anchor="end"))
-    o.append(D.rule(44, 64, W - 88, c))
+    o.append(D.dot_rule(44, 64, W - 88, c))
 
     # a soft light behind each hub, painted first so everything else sits on top
     for h in hubs:

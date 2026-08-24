@@ -86,7 +86,7 @@ def build(theme: str) -> str:
     o.append(D.eyebrow(44, 40, "ARCADE", c, colour=c["green"]))
     o.append(T(W - 44, 40, "hackathons / video games / history", size=SIZE["micro"],
                fill=c["text3"], anchor="end"))
-    o.append(D.rule(44, 56, W - 88, c))
+    o.append(D.dot_rule(44, 56, W - 88, c))
 
     # ---- starfield. Deterministic LCG so the file is byte-stable between runs.
     seed = 1
