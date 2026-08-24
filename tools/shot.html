@@ -1,16 +1,15 @@
 <!doctype html><meta charset="utf-8"><title>loading</title>
-<style>html,body{margin:0;padding:0}#host svg{display:block;width:1180px;height:610px}</style>
+<style>html,body{margin:0;padding:0}#host svg{display:block}</style>
 <div id="host"></div>
 <script>
 const q=new URLSearchParams(location.search);
-const theme=q.get('theme')||'dark';
+const file=q.get('file')||'banner-dark.svg';
 const T=parseFloat(q.get('t')||'0');
-document.documentElement.style.background = theme==='dark' ? '#0d1117' : '#ffffff';
-fetch('../assets/banner-'+theme+'.svg').then(r=>r.text()).then(txt=>{
+document.documentElement.style.background = file.includes('light') ? '#ffffff' : '#0d1117';
+fetch('../assets/'+file).then(r=>r.text()).then(txt=>{
   document.getElementById('host').innerHTML=txt;
   const svg=document.querySelector('#host svg');
-  svg.pauseAnimations();
-  svg.setCurrentTime(T);
-  document.title='ready t='+T;
+  svg.pauseAnimations(); svg.setCurrentTime(T);
+  document.title='ready';
 });
 </script>

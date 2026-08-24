@@ -37,6 +37,12 @@ an average cost basis makes harvesting advice quietly wrong.
 Choose that wrong and no amount of application code rescues it. Choose it right and the
 query everyone told you was expensive collapses into one hop.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-light.svg">
+  <img alt="The four projects drawn as one graph: shared technology is a shared node" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-dark.svg" width="100%">
+</picture>
+
 <br>
 
 ## Blast Radius
@@ -51,9 +57,11 @@ answer it. Not badly. **At all.**
 
 So I built the thing that can.
 
-<a href="https://github.com/Rohit-ATS/blast-radius">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/blast-radius/main/docs/images/hero.png" alt="The Blast Radius landing page" width="100%">
-</a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-light.svg">
+  <img alt="A Blast Radius incident session: transitive exposure, semver resolution, a live OSV lookup, and the fix - each with the latency of the query that produced it" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-dark.svg" width="100%">
+</picture>
 
 |   | The question | How it's answered |
 | - | ------------ | ----------------- |
@@ -61,17 +69,6 @@ So I built the thing that can.
 | **2** | **Whose semver range would *actually* have pulled the poison?** Declaring a dependency and resolving to the bad version are different facts. | Every declared range, evaluated against the bad version |
 | **3** | **Is anything in my lockfile already malicious?** | Live against `osv.dev` — no crawl coverage required |
 | **4** | **How do I fix it?** | The safe version, an `overrides` block, a brief an agent can act on |
-
-<table>
-<tr>
-<td width="50%"><a href="https://github.com/Rohit-ATS/blast-radius"><img src="https://raw.githubusercontent.com/Rohit-ATS/blast-radius/main/docs/images/blast-map.png" alt="The blast radius, drawn as concentric rings by depth"></a></td>
-<td width="50%"><a href="https://github.com/Rohit-ATS/blast-radius"><img src="https://raw.githubusercontent.com/Rohit-ATS/blast-radius/main/docs/images/check.png" alt="The incident console"></a></td>
-</tr>
-<tr>
-<td><b>The radius, drawn.</b> Concentric rings by depth, red attenuating outward. Click any package to pivot the entire console onto it.</td>
-<td><b>The console.</b> Blast radius, semver split, lockfile verdict, OSV audit, graph explorer, live publish feed — one port, no build step.</td>
-</tr>
-</table>
 
 **The data model is the whole trick.** Two layers in one graph: a collapsed
 `Package-[:REQUIRES]->Package` layer so traversal stays flat as depth grows, and a
@@ -137,6 +134,12 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
 ## Activity
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-light.svg">
+  <img alt="GitHub statistics: contributions, commits, pull requests, repositories, stars, followers, and the language mix" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-dark.svg" width="100%">
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0">
   <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=FFFFFF&amp;border=A9CFDC&amp;stroke=A9CFDC&amp;ring=0891B2&amp;fire=059669&amp;currStreakNum=1E293B&amp;sideNums=1E293B&amp;currStreakLabel=0891B2&amp;sideLabels=64748B&amp;dates=64748B">
   <img alt="Contribution streak: current streak, total contributions, and longest streak" src="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0" width="100%">
@@ -148,6 +151,14 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-light.svg">
   <img alt="A snake eating a year of my contribution graph" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg" width="100%">
+</picture>
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/arcade-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/arcade-light.svg">
+  <img alt="A pixel-art Space Invaders divider" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/arcade-dark.svg" width="100%">
 </picture>
 
 <!-- STREAK CARD, if you ever re-theme it: streak-stats.demolab.com recomputes from
@@ -171,6 +182,21 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
   <img width="49%" src="https://INSTANCE/api/top-langs?username=Rohit-ATS&layout=compact&langs_count=8&hide=html,css&bg_color=0A101F&title_color=22D3EE&text_color=C7D2E4&border_color=1B4A5C&border_radius=8" alt="Top languages">
 </div>
 -->
+
+<br>
+
+## Off the clock
+
+Paris, 1858. Morphy is at the opera, playing two noblemen sharing a board. He gives
+away both rooks and the queen, and mates on move seventeen with the only two pieces
+he has left. It is the game people are shown to learn that development and tempo
+beat material — that what you *have* matters less than what it can reach.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-light.svg">
+  <img alt="Morphy's Opera Game of 1858, replayed move by move" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-dark.svg" width="100%">
+</picture>
 
 <br>
 
