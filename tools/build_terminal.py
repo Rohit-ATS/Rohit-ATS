@@ -63,7 +63,7 @@ def cursor(y: float, n: int, t0: float, t1: float, c: dict) -> str:
     # until the animation reaches its first keyTime, which parks a stray cursor block
     # against the left edge of the panel for the first third of a second.
     return (f'<rect x="{xs[0]}" y="{y - FS + 2.5:.1f}" width="{CW:.1f}"'
-            f' height="{FS:.1f}" rx="1" fill="{c["cyan"]}" opacity="0.9">'
+            f' height="{FS:.1f}" rx="1" fill="{c["ink2"]}" opacity="0.9">'
             f'<animate attributeName="x" values="{";".join(xs)}" keyTimes="{";".join(kts)}"'
             f' calcMode="discrete" dur="{LOOP}s" repeatCount="indefinite"/>'
             f'<animate attributeName="opacity" values="0.95;0.95;0.1;0.95" dur="1.05s"'
@@ -119,8 +119,8 @@ def build(theme: str) -> str:
             f'<rect x="{XI - 12}" y="{ys - FS - 5:.1f}" width="{XR - XI + 12}"'
             f' height="{FS + 15:.1f}" rx="7" fill="{c["surf2"]}" stroke="{c["line"]}"/>',
             f'<rect x="{XI - 12}" y="{ys - FS - 5:.1f}" width="3" height="{FS + 15:.1f}"'
-            f' rx="1.5" fill="{c["violet"]}"/>',
-            T(XI, ys, "BLAST RADIUS", size=FS, mono=True, weight=700, fill=c["violet"])]
+            f' rx="1.5" fill="{c["ink"]}"/>',
+            T(XI, ys, "BLAST RADIUS", size=FS, mono=True, weight=700, fill=c["ink"])]
     seg_x = XI + w("BLAST RADIUS", size=FS, mono=True, weight=700) + 22
     for txt, col in (("1,247 reachable", c["text"]),
                      ("903 actually vulnerable", c["amber"]),

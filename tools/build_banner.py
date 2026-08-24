@@ -34,7 +34,6 @@ from scipy.optimize import linear_sum_assignment
 
 import design as D
 import fonts
-import nature as N
 from design import SIZE, T, w
 
 W, H = 1180, 620
@@ -141,7 +140,7 @@ def portrait_layers(dots, logo, c):
     gid[perm] = np.arange(len(pts)) % INTRO_GROUPS
     order = rng.permutation(INTRO_GROUPS)
 
-    intro = [f'<g id="intro" fill="{c["violet"]}" shape-rendering="crispEdges">']
+    intro = [f'<g id="intro" fill="{c["ink"]}" shape-rendering="crispEdges">']
     for slot, g in enumerate(order):
         begin = slot / max(INTRO_GROUPS - 1, 1) * (INTRO_SPREAD - INTRO_FADE)
         intro.append(f'<path opacity="0" d="{path_d(runs(pts[gid == g]))}">'
@@ -154,7 +153,7 @@ def portrait_layers(dots, logo, c):
     logo_pts = np.stack([lx, ly], 1).astype(np.float64)
     band, drift = drift_bands(pts.astype(np.float64), logo_pts, seed=99)
 
-    loop = [f'<g id="loop" opacity="0" fill="{c["violet"]}" shape-rendering="crispEdges">'
+    loop = [f'<g id="loop" opacity="0" fill="{c["ink"]}" shape-rendering="crispEdges">'
             f'<animate attributeName="opacity" values="0;1" begin="{INTRO_END}s"'
             f' dur="0.01s" fill="freeze"/>']
     for b in range(BANDS):
@@ -175,7 +174,7 @@ def portrait_layers(dots, logo, c):
     ri, ci = linear_sum_assignment(((src[:, None, :] - dst[None, :, :]) ** 2).sum(-1))
     src, dst = src[ri], dst[ci]
 
-    trav = [f'<g id="trav" opacity="0" fill="{c["cyan"]}" shape-rendering="crispEdges">'
+    trav = [f'<g id="trav" opacity="0" fill="{c["ink2"]}" shape-rendering="crispEdges">'
             f'<animate attributeName="opacity" values="0;0;1;1;0;0"'
             f' keyTimes="0;0.42000;0.55000;0.80000;0.95000;1" dur="{LOOP}s"'
             f' begin="{INTRO_END}s" repeatCount="indefinite"/>']
@@ -233,13 +232,6 @@ def build(theme: str) -> tuple[str, dict]:
     # A verge under the portrait, so the face dissolves downward into grass rather than
     # just fading out. Same marks, so the handover is invisible. It is kept to the right
     # of x=610: grass growing through the contact line would be unreadable.
-    o.append(N.ridge(560, H - 4, W - 500, 34, seed=61, colour=c["violet"],
-                     opacity=0.16, band=16, pitch=5, freq=2.4))
-    o.append(N.grass(575, H - 12, W - 545, blades=140, h_min=8, h_max=20,
-                     colour=c["cyan"], opacity=0.3, sway_frac=0.2, seed=29, uid="hb"))
-    o.append(N.grass(560, H + 14, W - 520, blades=190, h_min=16, h_max=50,
-                     colour=c["green"], colour2=c["cyan"], opacity=0.62,
-                     sway_frac=0.4, seed=17, uid="hg"))
     o.append('</g>')
 
     # ---- edition mark, running up the far left margin
@@ -263,7 +255,7 @@ def build(theme: str) -> tuple[str, dict]:
     o.append(D.dot_rule(LX, 320, 330, c, pitch=8, r=1.7))
 
     o.append(T(LX, 360, ROLE.upper(), size=SIZE["body"], weight=700,
-               fill=c["violet"], track=0.24))
+               fill=c["ink"], track=0.24))
     o.append(T(LX, 386, META, size=SIZE["small"], fill=c["text3"]))
 
     for i, line in enumerate(BIO):
@@ -271,7 +263,7 @@ def build(theme: str) -> tuple[str, dict]:
                    fill=c["text2"]))
 
     # ---- stack, as text rather than as pills
-    o.append(D.eyebrow(LX, 502, "STACK", c, colour=c["cyan"]))
+    o.append(D.eyebrow(LX, 502, "STACK", c, colour=c["ink2"]))
     for i, line in enumerate(STACK):
         o.append(T(LX, 528 + i * 21, line, size=SIZE["tiny"], mono=True,
                    fill=c["text2"], track=0.06))

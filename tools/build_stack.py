@@ -18,16 +18,16 @@ W, H = 1180, 268
 PAD = 44
 
 COLUMNS = [
-    ("LANGUAGES", "violet", [
+    ("LANGUAGES", "ink", [
         "Python", "TypeScript", "JavaScript", "SQL · Cypher", "Bash"]),
-    ("DATA & GRAPH", "cyan", [
+    ("DATA & GRAPH", "ink2", [
         "HydraDB", "PostgreSQL", "pgvector", "SQLite · WAL", "Redis · Prisma"]),
-    ("AI & AGENTS", "amber", [
+    ("AI & AGENTS", "ink3", [
         "Claude API", "MCP servers", "Ollama · local LLM", "Whisper · TTS",
         "Embeddings · RAG"]),
-    ("INTERFACE", "green", [
+    ("INTERFACE", "text2", [
         "React 19", "Next.js 16", "Electron", "Tailwind v4", "Vanilla JS, no build"]),
-    ("INFRASTRUCTURE", "rose", [
+    ("INFRASTRUCTURE", "text3", [
         "Docker · Compose", "FastAPI", "Render · Vercel", "Supabase", "GitHub Actions"]),
 ]
 

@@ -129,10 +129,13 @@ def digest(u: dict) -> dict:
 
 
 LANG_COLOUR = {
-    "Python": "#5A9FD4", "TypeScript": "#4B8FE0", "JavaScript": "#F0D14C",
-    "C++": "#F4628B", "Dart": "#00C4BA", "Shell": "#93E86A", "Swift": "#FF6B3D",
-    "Kotlin": "#B98BFF", "Go": "#3BC5E8", "Rust": "#E8AE7F", "Java": "#C4823B",
-    "Ruby": "#E04A45", "C": "#8A9AAA", "PLpgSQL": "#4A87C4",
+    # A language's own colour is how it is recognised at a glance, so this is the one
+    # place colour still earns its keep. Muted toward the ground so four bars read as
+    # data rather than as decoration.
+    "Python": "#5B7FA6", "TypeScript": "#4E76B0", "JavaScript": "#B3A24A",
+    "C++": "#A9647A", "Dart": "#3E8C88", "Shell": "#6E9159", "Swift": "#B0705A",
+    "Kotlin": "#7E6FA6", "Go": "#4C8494", "Rust": "#9A8069", "Java": "#8A6A4C",
+    "Ruby": "#A15A56", "C": "#6E7681", "PLpgSQL": "#4A6E92",
 }
 
 SMALL = [("COMMITS", "commits", None), ("PULL REQUESTS", "prs", None),
@@ -176,14 +179,14 @@ def build(theme: str, d: dict) -> str:
     # ---- the headline figure, as lit and unlit cells
     o.append(D.glow(PAD + 110, 128, 200))
     marks, _ = D.dot_number(PAD, 100, hero, pitch=10.5, r=3.7,
-                            fill=c["violet"], dim=c["line"])
+                            fill=c["ink"], dim=c["line"])
     o.append(marks)
     o.append(T(PAD, 196, "CONTRIBUTIONS IN THE LAST YEAR", size=SIZE["micro"],
                weight=700, fill=c["text3"], track=0.24))
 
     # ---- language mix, right of the headline
     LX = 640
-    o.append(D.eyebrow(LX, 100, "LANGUAGE", c, colour=c["cyan"]))
+    o.append(D.eyebrow(LX, 100, "LANGUAGE", c, colour=c["ink2"]))
     o.append(T(W - PAD, 100, "by bytes, markup excluded", size=SIZE["micro"],
                fill=c["text3"], anchor="end"))
     bar_x = LX + 132
@@ -192,7 +195,7 @@ def build(theme: str, d: dict) -> str:
         y = 136 + i * 32
         o.append(T(LX, y + 4, name, size=SIZE["small"], fill=c["text2"]))
         o.append(D.dot_bar(bar_x, y, bar_w, pct / 100, c, pitch=8, r=2.7,
-                           fill=LANG_COLOUR.get(name, c["cyan"]), begin=0.15 * i))
+                           fill=LANG_COLOUR.get(name, c["ink2"]), begin=0.15 * i))
         o.append(T(W - PAD, y + 4, f"{pct:.1f}%", size=SIZE["small"], mono=True,
                    fill=c["text3"], anchor="end"))
 

@@ -177,7 +177,7 @@ def build(theme: str) -> str:
         d = f"M{x1:.1f} {y1:.1f}Q{cxp:.1f} {cyp:.1f} {x2:.1f} {y2:.1f}"
         o.append(f'<path d="{d}" fill="none" stroke="{c["line"]}" stroke-width="1.1"/>')
         delay = (n_ * 0.31) % 4.4
-        o.append(f'<circle r="2.1" fill="{c["cyan"]}" opacity="0">'
+        o.append(f'<circle r="2.1" fill="{c["ink2"]}" opacity="0">'
                  f'<animateMotion path="{d}" dur="2.4s" begin="{delay:.2f}s"'
                  f' repeatCount="indefinite" calcMode="spline" keyPoints="0;1"'
                  f' keyTimes="0;1" keySplines="{D.EASE}"/>'
@@ -187,9 +187,9 @@ def build(theme: str) -> str:
     # ---- technology nodes
     for name in names[len(hubs):]:
         x, y = P[name]
-        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.4" fill="{c["cyan"]}"/>')
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.4" fill="{c["ink2"]}"/>')
         o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="7" fill="none"'
-                 f' stroke="{c["cyan"]}" stroke-width="1" opacity="0.22"/>')
+                 f' stroke="{c["ink2"]}" stroke-width="1" opacity="0.22"/>')
         o.append(T(x, y - 14, name, size=SIZE["tiny"], weight=500, fill=c["text2"],
                    anchor="middle"))
 
@@ -198,13 +198,13 @@ def build(theme: str) -> str:
         x, y = P[name]
         meta = "  ·  ".join(HUB_META[name])
         o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="20" fill="none"'
-                 f' stroke="{c["violet"]}" stroke-width="1.2" opacity="0.45">'
+                 f' stroke="{c["ink"]}" stroke-width="1.2" opacity="0.45">'
                  f'<animate attributeName="r" values="12;34;34" dur="3.4s"'
                  f' begin="{i * 0.85:.1f}s" repeatCount="indefinite"'
                  f' calcMode="spline" keyTimes="0;0.7;1" keySplines="{D.EASE};0 0 1 1"/>'
                  f'<animate attributeName="opacity" values="0.5;0;0" dur="3.4s"'
                  f' begin="{i * 0.85:.1f}s" repeatCount="indefinite"/></circle>')
-        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="8.5" fill="{c["violet"]}"'
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="8.5" fill="{c["ink"]}"'
                  f' filter="url(#fBloom)"/>')
 
         tw = max(w(name, size=SIZE["body"], weight=700),

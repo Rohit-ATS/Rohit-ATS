@@ -115,9 +115,23 @@ def build(theme: str) -> str:
     glyphs render thin and weak against a dark board.
     """
     c = D.THEMES[theme]
-    light_sq = "#1A2A46" if theme == "dark" else "#EDF2F9"
-    dark_sq = "#0E1A2E" if theme == "dark" else "#D6E2F0"
-    wc, bc = c["text"], c["violet"]
+    # Neutral squares. These were hardcoded blues and survived the palette
+    # swap untouched, which left one panel still tinted.
+    light_sq = "#212124" if theme == "dark" else "#ECECE9"
+    dark_sq = "#151518" if theme == "dark" else "#DAD9D5"
+    # In colour the sides were told apart by hue, which collapses in monochrome.
+    # Back to the actual chess convention - one side solid, the other outlined - and it
+    # has to invert per theme: on paper the solid piece is the dark one, on a dark
+    # ground the solid piece is the light one. Using the text colour for "white" in both
+    # themes rendered both armies near-black in the light theme.
+    if theme == "dark":
+        w_paint = f'fill="{c["text"]}"'
+        b_paint = (f'fill="#141416" stroke="{c["text2"]}" stroke-width="1.1"'
+                   f' paint-order="stroke"')
+    else:
+        w_paint = (f'fill="#FFFFFF" stroke="{c["text"]}" stroke-width="1.1"'
+                   f' paint-order="stroke"')
+        b_paint = f'fill="{c["text"]}"'
 
     tracks, captured, _ = simulate()
     meta = piece_meta()
@@ -195,8 +209,9 @@ def build(theme: str) -> str:
             fade = (f'<animate attributeName="opacity" values="1;1;0;0;1"'
                     f' keyTimes="0;{max(tc - 0.006, 0):.4f};{tc:.4f};0.9990;1"'
                     f' dur="{LOOP}s" repeatCount="indefinite"/>')
+        paint = w_paint if col == "w" else b_paint
         glyph = (f'<text x="{x0 + SQ / 2:.0f}" y="{y0 + SQ * 0.73:.0f}" font-size="29"'
-                 f' font-family="{PIECE_FONT}" fill="{wc if col == "w" else bc}"'
+                 f' font-family="{PIECE_FONT}" {paint}'
                  f' text-anchor="middle">{GLYPH[p_]}</text>')
         o.append(f"<g>{anim}{fade}{glyph}</g>")
 
@@ -222,7 +237,7 @@ def build(theme: str) -> str:
         pkt.append(f"{ply * PLY / LOOP:.4f}")
     px.append(px[-1]); py.append(py[-1]); pkt.append("1")
     o.append(f'<rect x="{px[0]}" y="{py[0]}" width="{COLW - 30}" height="24" rx="6"'
-             f' fill="{c["violet"]}" opacity="0.13">'
+             f' fill="{c["ink"]}" opacity="0.13">'
              f'<animate attributeName="x" values="{";".join(px)}" keyTimes="{";".join(pkt)}"'
              f' calcMode="discrete" dur="{LOOP}s" repeatCount="indefinite"/>'
              f'<animate attributeName="y" values="{";".join(py)}" keyTimes="{";".join(pkt)}"'

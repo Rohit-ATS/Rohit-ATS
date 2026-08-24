@@ -32,20 +32,20 @@ SIZE = dict(micro=9.5, tiny=11, small=12.5, body=14.5, lead=17, sub=24,
 
 THEMES = {
     "dark": dict(
-        bg="#04070E", bg2="#070C16", surf="#0B1220", surf2="#101A2C",
-        line="#1B2942", hair="#FFFFFF", hair_op=0.07,
-        text="#F4F7FD", text2="#98AAC6", text3="#55688A",
-        violet="#B79CFF", violet2="#8B6BF5", cyan="#43D2FF", cyan2="#0EA5E9",
-        amber="#FFC53D", rose="#FF7A8A", green="#3DDC97",
-        shadow="#000000", shadow_op=0.6, grain_op=0.04,
+        bg="#0A0A0B", bg2="#0F0F11", surf="#141416", surf2="#1A1A1D",
+        line="#27272B", hair="#FFFFFF", hair_op=0.07,
+        text="#FAFAFA", text2="#A6A6AE", text3="#5E5E67",
+        ink="#EDEDF0", ink2="#9A9AA3", ink3="#6E6E78",
+        amber="#C9A227", rose="#C4646C", green="#4ADE80",
+        shadow="#000000", shadow_op=0.6, grain_op=0.035,
     ),
     "light": dict(
-        bg="#F4F7FC", bg2="#FFFFFF", surf="#FFFFFF", surf2="#F2F6FB",
-        line="#D9E3F0", hair="#FFFFFF", hair_op=0.9,
-        text="#060B14", text2="#42536B", text3="#8294AD",
-        violet="#5B2FD6", violet2="#7C4DEF", cyan="#0284C7", cyan2="#0369A1",
-        amber="#A35A00", rose="#D6103C", green="#03875E",
-        shadow="#0F172A", shadow_op=0.12, grain_op=0.02,
+        bg="#FAFAF9", bg2="#FFFFFF", surf="#FFFFFF", surf2="#F4F4F2",
+        line="#E3E3E0", hair="#FFFFFF", hair_op=0.9,
+        text="#0B0B0C", text2="#4E4E56", text3="#8A8A93",
+        ink="#18181B", ink2="#6B6B74", ink3="#8A8A93",
+        amber="#8A6D1F", rose="#A34A52", green="#15803D",
+        shadow="#0A0A0B", shadow_op=0.12, grain_op=0.02,
     ),
 }
 
@@ -77,7 +77,7 @@ def T(x, y, s, *, size=SIZE["body"], weight=400, mono=False, fill="#fff",
 
 def defs(c: dict, *, glow_colour: str | None = None, grain=True) -> str:
     """Gradients and filters every panel draws from."""
-    g = glow_colour or c["violet"]
+    g = glow_colour or c["ink"]
     o = ['<defs>',
          f'<linearGradient id="gSurf" x1="0" y1="0" x2="0" y2="1">'
          f'<stop offset="0" stop-color="{c["surf2"]}"/>'
@@ -86,15 +86,15 @@ def defs(c: dict, *, glow_colour: str | None = None, grain=True) -> str:
          f'<stop offset="0" stop-color="{c["bg2"]}"/>'
          f'<stop offset="1" stop-color="{c["bg"]}"/></linearGradient>',
          f'<linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="0">'
-         f'<stop offset="0" stop-color="{c["violet"]}"/>'
-         f'<stop offset="1" stop-color="{c["cyan"]}"/></linearGradient>',
+         f'<stop offset="0" stop-color="{c["ink"]}"/>'
+         f'<stop offset="1" stop-color="{c["ink2"]}"/></linearGradient>',
          f'<linearGradient id="gHair" x1="0" y1="0" x2="1" y2="0">'
          f'<stop offset="0" stop-color="{c["hair"]}" stop-opacity="0"/>'
          f'<stop offset="0.5" stop-color="{c["hair"]}" stop-opacity="{c["hair_op"]}"/>'
          f'<stop offset="1" stop-color="{c["hair"]}" stop-opacity="0"/></linearGradient>',
          f'<radialGradient id="gGlow">'
-         f'<stop offset="0" stop-color="{g}" stop-opacity="0.34"/>'
-         f'<stop offset="0.55" stop-color="{g}" stop-opacity="0.09"/>'
+         f'<stop offset="0" stop-color="{g}" stop-opacity="0.17"/>'
+         f'<stop offset="0.55" stop-color="{g}" stop-opacity="0.05"/>'
          f'<stop offset="1" stop-color="{g}" stop-opacity="0"/></radialGradient>',
          f'<filter id="fSoft" x="-30%" y="-30%" width="160%" height="160%">'
          f'<feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="{c["shadow"]}"'
@@ -184,7 +184,7 @@ def rule(x, y, length, c, *, opacity=1.0) -> str:
 
 def eyebrow(x, y, label, c, *, colour=None) -> str:
     """Small caps label with a short accent tick - marks a section without a heading."""
-    col = colour or c["violet"]
+    col = colour or c["ink"]
     return (f'<rect x="{x:.1f}" y="{y - 7:.1f}" width="3" height="10" rx="1.5" fill="{col}"/>'
             + T(x + 11, y, label, size=SIZE["tiny"], weight=700, fill=c["text3"], track=0.16))
 

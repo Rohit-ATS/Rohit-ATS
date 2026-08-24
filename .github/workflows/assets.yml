@@ -43,8 +43,8 @@ jobs:
           # #0d1117 page a near-black empty cell vanishes and the grid looks broken -
           # a snake swimming through nothing.
           outputs: |
-            dist/snake-dark.svg?color_snake=%23a78bfa&color_dots=%232d3343,%23164e5c,%231a7f8f,%2322d3ee,%2367e8f9
-            dist/snake-light.svg?color_snake=%237c3aed&color_dots=%23e9eef5,%23bfe3ec,%237fc9dc,%232ba3c0,%230891b2
+            dist/snake-dark.svg?color_snake=%23fafafa&color_dots=%2327272b,%233f3f46,%2371717a,%23a1a1aa,%23e4e4e7
+            dist/snake-light.svg?color_snake=%2318181b&color_dots=%23eeeeec,%23d4d4d0,%23a1a1a4,%236b6b74,%2327272b
 
       # build_stats.py imports design -> fonts, which subsets an OFL webfont into the
       # SVG. Without these the step dies on ImportError, and the card silently stops
