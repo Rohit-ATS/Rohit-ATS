@@ -48,7 +48,10 @@ QUERY = """
       totalPullRequestContributions
       totalIssueContributions
       totalRepositoryContributions
-      contributionCalendar { totalContributions }
+      contributionCalendar {
+        totalContributions
+        weeks { contributionDays { date contributionCount } }
+      }
     }
   } }
 """ % USER
@@ -76,6 +79,26 @@ def fetch() -> dict:
     return body["data"]["user"]
 
 
+def streaks(cal: dict) -> tuple[int, int]:
+    """Current and longest daily streak from the contribution calendar.
+
+    The current streak deliberately skips a zero on the most recent day: the day is not
+    over yet, and counting it as a break resets the number every morning."""
+    days = [d["contributionCount"]
+            for w in cal["weeks"] for d in w["contributionDays"]]
+    longest = run = 0
+    for n in days:
+        run = run + 1 if n > 0 else 0
+        longest = max(longest, run)
+    tail = days[:-1] if days and days[-1] == 0 else days
+    current = 0
+    for n in reversed(tail):
+        if n == 0:
+            break
+        current += 1
+    return current, longest
+
+
 def digest(u: dict) -> dict:
     repos = u["repositories"]["nodes"]
     cc = u["contributionsCollection"]
@@ -88,8 +111,11 @@ def digest(u: dict) -> dict:
             langs[n] = langs.get(n, 0) + e["size"]
     total = sum(langs.values()) or 1
     top = sorted(langs.items(), key=lambda kv: -kv[1])[:6]
+    cur, longest = streaks(cc["contributionCalendar"])
     return dict(
         contributions=cc["contributionCalendar"]["totalContributions"],
+        streak=cur,
+        longest=longest,
         commits=cc["totalCommitContributions"],
         prs=cc["totalPullRequestContributions"],
         issues=cc["totalIssueContributions"],
@@ -117,12 +143,15 @@ def build(theme: str, d: dict) -> str:
          chrome]
 
     # ---- headline tiles
-    tiles = [("CONTRIBUTIONS", f"{d['contributions']:,}", c["mark"]),
-             ("COMMITS",       f"{d['commits']:,}",       c["chrome"]),
-             ("PULL REQUESTS", f"{d['prs']:,}",           c["chrome"]),
-             ("REPOSITORIES",  f"{d['repos']:,}",         c["violet"]),
-             ("STARS EARNED",  f"{d['stars']:,}",         c["warn"]),
-             ("FOLLOWERS",     f"{d['followers']:,}",     c["violet"])]
+    # Stars and followers are deliberately not here. On an account opened in 2024 they
+    # measure reach and age rather than work, exactly like the github-readme-stats rank
+    # badge that this profile also hides. Six tiles that describe output, not audience.
+    tiles = [("CONTRIBUTIONS",  f"{d['contributions']:,}", c["mark"]),
+             ("COMMITS",        f"{d['commits']:,}",       c["chrome"]),
+             ("PULL REQUESTS",  f"{d['prs']:,}",           c["chrome"]),
+             ("CURRENT STREAK", f"{d['streak']:,} d",      c["warn"]),
+             ("LONGEST STREAK", f"{d['longest']:,} d",     c["warn"]),
+             ("REPOSITORIES",   f"{d['repos']:,}",         c["violet"])]
     tw, th = 176, 74
     for i, (label, value, col) in enumerate(tiles):
         cx = 26 + (i % 3) * (tw + 12)
