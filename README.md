@@ -137,9 +137,9 @@ Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo
 ## Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0">
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=FFFFFF&amp;border=A9CFDC&amp;stroke=A9CFDC&amp;ring=0891B2&amp;fire=059669&amp;currStreakNum=1E293B&amp;sideNums=1E293B&amp;currStreakLabel=0891B2&amp;sideLabels=64748B&amp;dates=64748B">
-  <img alt="Contribution streak: current streak, total contributions, and longest streak" src="https://streak-stats.demolab.com?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0">
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=FFFFFF&amp;border=A9CFDC&amp;stroke=A9CFDC&amp;ring=0891B2&amp;fire=059669&amp;currStreakNum=1E293B&amp;sideNums=1E293B&amp;currStreakLabel=0891B2&amp;sideLabels=64748B&amp;dates=64748B">
+  <img alt="Contribution streak: current streak, total contributions, and longest streak" src="https://streak-stats.demolab.com/?user=Rohit-ATS&amp;hide_border=false&amp;border_radius=8&amp;background=0A101F&amp;border=1B4A5C&amp;stroke=1B4A5C&amp;ring=22D3EE&amp;fire=10B981&amp;currStreakNum=C7D2E4&amp;sideNums=C7D2E4&amp;currStreakLabel=22D3EE&amp;sideLabels=5FBBD0&amp;dates=5FBBD0" width="100%">
 </picture>
 
 <br>
