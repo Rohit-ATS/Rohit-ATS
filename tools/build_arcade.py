@@ -113,12 +113,13 @@ def build(theme: str) -> str:
                  f'{"".join(body)}</g>')
         o.insert(1, f'<defs><path id="inv{rank}" d="{d}"/></defs>')
 
-    # ---- ship, sweeping under the ranks
+    # ---- ship, sweeping under the ranks. Travel stops short of the right edge:
+    # the full width runs the ship straight through the footer caption.
     sw = len(SHIP[0]) * CELL
     ship_y = H - 44
     o.append(f'<g fill="{c["violet"]}" shape-rendering="crispEdges">'
              f'<animateTransform attributeName="transform" type="translate"'
-             f' values="0 0;{W - sw - 120:.0f} 0;0 0" keyTimes="0;0.5;1"'
+             f' values="0 0;{W - sw - 340:.0f} 0;0 0" keyTimes="0;0.5;1"'
              f' dur="{LOOP * 2:.1f}s" repeatCount="indefinite"/>'
              f'<path transform="translate(60 {ship_y})" d="{sprite_path(SHIP)}"/></g>')
 
