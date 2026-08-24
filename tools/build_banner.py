@@ -91,16 +91,15 @@ ROWS = [
     None,
     ("Grid.Mail",      "rohitmaruriats@gmail.com"),
     ("Grid.Portfolio", "coming soon"),
+    ("Grid.LinkedIn",  "in/rohitmaruri"),
     ("Grid.GitHub",    "Rohit-ATS"),
 ]
 
-# Rows held back because the value would be a guess. A wrong handle on a public profile
-# is worse than a missing row, so these stay out until Rohit confirms them. To restore:
-# drop the entry here and add the row to ROWS above, then re-run. Nothing else changes -
-# row positions and leader dots are all computed.
-PENDING = {
-    "Grid.LinkedIn": "needs the real vanity URL (github.com/Rohit-ATS has none listed)",
-}
+# Rows whose value would be a guess are held here instead of shipped: a wrong handle on
+# a public profile is worse than a missing row. Currently empty - LinkedIn came from
+# GET /users/Rohit-ATS/social_accounts, which returned in/rohitmaruri. The guess it
+# replaced was "rohit-maruri", so the hold was doing real work.
+PENDING: dict[str, str] = {}
 UNVERIFIED: dict[str, str] = {}
 
 ROW_SIZE, HDR_SIZE, LIVE_SIZE, PILL_SIZE = 14, 13, 12, 14
