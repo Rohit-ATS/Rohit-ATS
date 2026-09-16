@@ -6,32 +6,29 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/minecraft-hero-dark.svg" width="100%" alt="Rohit Maruri developer profile — Minecraft inspired pixel-art world" />
+<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/minecraft-hero-dark.svg" width="100%" alt="Rohit Maruri — systems builder in a pixel-art world" />
 
-### A systems builder who likes hard problems.<br>AI infrastructure, graph systems, developer tools, and software worth shipping.
+### The systems builder for hard problems.<br>AI infrastructure, graph systems, developer tools, and software worth shipping.
 
-<br>
-
-<a href="#spawn-point"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/enter.svg" height="42" alt="Enter world" /></a>
-<a href="#inventory"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/inventory.svg" height="42" alt="Inventory" /></a>
-<a href="#crafting-table"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/crafting.svg" height="42" alt="Crafting" /></a>
-<a href="#quest-log"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/quests.svg" height="42" alt="Quests" /></a>
-<a href="#world-stats"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/stats.svg" height="42" alt="World stats" /></a>
-<a href="#connect"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/buttons/connect.svg" height="42" alt="Connect" /></a>
+<a href="#projects"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/play.svg" height="40" alt="Projects"></a>
+<a href="#inventory"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/features.svg" height="40" alt="Inventory"></a>
+<a href="#how-i-build"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/how.svg" height="40" alt="How I build"></a>
+<a href="#architecture-minded"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/architecture.svg" height="40" alt="Architecture"></a>
+<a href="#quest-log"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/quickstart.svg" height="40" alt="Quest log"></a>
+<a href="#connect"><img src="https://raw.githubusercontent.com/k1lst1x/DOCKET/main/docs/readme/buttons/docs.svg" height="40" alt="Connect"></a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/STATUS-BUILDING-4CAF50?style=for-the-badge&labelColor=242424" alt="Status building" />
-<img src="https://img.shields.io/badge/CLASS-SYSTEMS%20BUILDER-7E57C2?style=for-the-badge&labelColor=242424" alt="Systems builder" />
-<img src="https://img.shields.io/badge/MAIN%20TOOL-CODE-3F88C5?style=for-the-badge&labelColor=242424" alt="Code" />
-<img src="https://img.shields.io/badge/MODE-SHIP-8BC34A?style=for-the-badge&labelColor=242424" alt="Ship mode" />
-<img src="https://img.shields.io/badge/XP-CURIOUS-FFB300?style=for-the-badge&labelColor=242424" alt="Curious" />
+<img src="https://img.shields.io/badge/STATUS-BUILDING-6DB33F?style=for-the-badge&labelColor=262626" alt="Building">
+<img src="https://img.shields.io/badge/CLASS-SYSTEMS%20BUILDER-7E57C2?style=for-the-badge&labelColor=262626" alt="Systems builder">
+<img src="https://img.shields.io/badge/MODE-SHIP-C8352B?style=for-the-badge&labelColor=262626" alt="Ship">
+<img src="https://img.shields.io/badge/FOCUS-AI%20%2F%20INFRASTRUCTURE-3D7CC9?style=for-the-badge&labelColor=262626" alt="AI infrastructure">
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mc-hotbar.svg" width="760" alt="Minecraft-inspired developer inventory hotbar" />
+<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mc-hotbar.svg" width="760" alt="Rohit's engineering hotbar">
 
-<sub>▲ My hotbar: projects, AI, graphs, caching, systems, tools, quests, stats, and ways to connect.</sub>
+<sub>▲ Projects, agents, graphs, caching, systems, security, and developer tools.</sub>
 
 </div>
 
