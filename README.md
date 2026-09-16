@@ -262,43 +262,81 @@ Ship. Get real feedback. Learn what was wrong. Return to the crafting table.
 
 ## 🧱 Projects · The Builds
 
-### 💎 Blast Radius
+> Four builds from the world: civic intelligence, supply-chain security, autonomous software repair, and safe agentic change control.
 
-**The problem:** dependency graphs become difficult to reason about exactly when security teams need answers quickly.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-**The build:** model the dependency universe as a graph, traverse transitive relationships, resolve version constraints, correlate vulnerability data, and expose the blast radius.
+### 🏘️ DOCKET · The Village
 
-**What I learned:** the shape of the data model determines which security questions can be answered cheaply and which become painful.
+**The problem:** neighborhood information is scattered across city-hall packets, news sites, emergency feeds, maps, and group chats.
 
----
+**The build:** a neighborhood operating system for Fremont. Two Strands agents on Amazon Bedrock AgentCore crawl and retrieve public records, generate short updates with numbered citations, power context-aware chat, and refuse to publish claims that fail evidence checks.
 
-### 🧠 Vivedly AI
+**The engineering loot:** Next.js, React, TypeScript, Python, FastAPI, Aurora DSQL, S3 Vectors, BM25, Google Maps, Rekognition, AWS Amplify.
 
-**The problem:** most AI assistants wait for a prompt while the user's context is already changing around them.
+**What I learned:** useful AI is not a chat box. It is retrieval, provenance, verification, trust boundaries, and a product people can actually use.
 
-**The build:** a desktop environment with context awareness, layered memory, MCP tools, streaming voice, and native actions.
+<a href="https://github.com/k1lst1x/DOCKET"><b>🗺️ Enter DOCKET →</b></a>
 
-**What I learned:** an agent isn't just a model call. The interesting engineering lives in state, tools, permissions, memory, orchestration, and feedback loops.
+</td>
+<td width="50%" valign="top">
 
----
+### 💎 BLAST RADIUS · The Mine
 
-### 📈 Meridian
+**The problem:** when an npm package is compromised, a dependency list cannot answer who is actually exposed—or which semver ranges would have pulled the poisoned version.
 
-**The problem:** financial interfaces often flatten complex financial state into convenient summaries.
+**The build:** a graph-based supply-chain incident console that traverses transitive dependencies five levels deep, evaluates every declared range, checks live OSV data, draws the blast radius, and generates concrete remediation paths.
 
-**The build:** an AI-native financial terminal with multiple views, options pricing, portfolio state, and individually represented tax lots.
+**The engineering loot:** Python, FastAPI, HydraDB, OpenCypher, SQLite, Docker, OSV, SSE, and a no-build-step frontend.
 
-**What I learned:** correctness often begins with refusing to throw away information.
+**What I learned:** the data model decides which security questions are cheap to answer. Graph shape is not an implementation detail; it is the product.
 
----
+<a href="https://github.com/Rohit-ATS/blast-radius"><b>⛏️ Explore the blast radius →</b></a>
 
-### ⚡ Semantic Output Cache
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-**The problem:** two requests can mean the same thing while being textually different.
+### 🔨 FORGE · The Factory
 
-**The build:** semantic similarity layered over conventional cache identity so repeated intent can become a cache hit.
+**The problem:** AI can ship a page in seconds, then leave behind missing security headers, open admin routes, leaked keys, inaccessible images, and nobody responsible for fixing them.
 
-**What I learned:** AI infrastructure often needs to model *meaning*, not only bytes.
+**The build:** a software factory that keeps checking the applications it creates. FORGE discovers security and quality findings, classifies whether a fix is safe, writes the code and its test, re-checks the result, and opens a pull request for a human to approve.
+
+**The engineering loot:** Python 3.14, FastAPI, Bright Data Scraper Studio, SigNoz, OpenTelemetry, traced workflows, and a verified test loop.
+
+**What I learned:** autonomous repair needs a loop, not a one-shot prompt: inspect → reason → write → prove → ask.
+
+<a href="https://github.com/k1lst1x/FORGE"><b>🏭 Enter the factory →</b></a>
+
+</td>
+<td width="50%" valign="top">
+
+### 🛡️ AIRLOCK · The Gate
+
+**The problem:** asking a human to approve an agent's production change before showing whether it is reversible turns approval into a trust ritual.
+
+**The build:** a change-control system that executes proposed changes against a throwaway copy of real data, rolls them back, checksums before/after/after-rollback state, measures blast radius, and only then asks for human approval. The agent can propose, but it has no tool that writes to production.
+
+**The engineering loot:** TypeScript, React, Next.js, Node.js, Postgres, MCP, TrueForge, policy-as-code, shadow verification, tamper-evident receipts, and 347 passing tests.
+
+**What I learned:** safety is strongest when it is a gate enforced by evidence—not a sentence in a prompt and not a button rendered too early.
+
+<a href="https://github.com/Rohit-ATS/Airlock"><b>🚪 Pass through AIRLOCK →</b></a>
+
+</td>
+</tr>
+</table>
+
+### 🧭 The common thread
+
+Each build asks the same question in a different biome:
+
+> **Can the system prove what it knows, what it changed, and why a human should trust the next step?**
+
 
 <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mc-divider.svg" width="100%" alt="pixel grass divider" />
 
