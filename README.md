@@ -1,228 +1,186 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-light.svg">
-  <img alt="Rohit Maruri - developer infrastructure. Computer Science at San Francisco Bay University. Graph databases, semantic caches, agent runtimes." src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-dark.svg" width="100%">
-</picture>
+<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/minecraft-hero-dark.svg" width="100%" alt="Rohit Maruri — Minecraft-inspired developer profile hero" />
 
-<br><br>
+# ⛏️ Rohit Maruri
+### `builder of systems • lover of hard problems • shipping anyway`
 
-[![Email](<https://img.shields.io/badge/Email-0A101F?style=for-the-badge&labelColor=0A101F&logo=gmail&logoColor=10B981>)](mailto:rohitmaruriats@gmail.com)
-&nbsp;·&nbsp;
-[![LinkedIn](<https://img.shields.io/badge/LinkedIn-0A101F?style=for-the-badge&labelColor=0A101F&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iIzIyZDNlZSIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYy0xLjE0NCAwLTIuMDYzLS45MjYtMi4wNjMtMi4wNjUgMC0xLjEzOC45Mi0yLjA2MyAyLjA2My0yLjA2MyAxLjE0IDAgMi4wNjQuOTI1IDIuMDY0IDIuMDYzIDAgMS4xMzktLjkyNSAyLjA2NS0yLjA2NCAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyNSAweiIvPjwvc3ZnPg%3D%3D>)](https://www.linkedin.com/in/rohitmaruri/)
-&nbsp;·&nbsp;
-[![Blast Radius](<https://img.shields.io/badge/Blast_Radius-0A101F?style=for-the-badge&labelColor=0A101F&logo=neo4j&logoColor=22D3EE>)](https://github.com/Rohit-ATS/blast-radius)
-&nbsp;·&nbsp;
-[![The stack](<https://img.shields.io/badge/The_Stack-0A101F?style=for-the-badge&labelColor=0A101F&logo=typescript&logoColor=A78BFA>)](#the-stack)
+[![Email](https://img.shields.io/badge/EMAIL-0b0f0d?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rohitmaruriats@gmail.com) [![LinkedIn](https://img.shields.io/badge/LINKEDIN-0b0f0d?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohitmaruri/) [![GitHub](https://img.shields.io/badge/GITHUB-0b0f0d?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rohit-ATS) [![Blast Radius](https://img.shields.io/badge/BLAST%20RADIUS-0b0f0d?style=for-the-badge&logo=neo4j&logoColor=5fe88a)](https://github.com/Rohit-ATS/blast-radius)
+
+<br>
+
+> **I like turning impossible-looking engineering problems into things you can actually run.**
+>
+> AI infrastructure · graph systems · developer tools · agent runtimes
 
 </div>
 
 ---
 
-First-year CS student at **San Francisco Bay University**. I build things that actually
-ship — with tests, migrations, signed webhooks, and an answer for what happens when
-they break at 3 AM.
+## 🌲 Spawn Point
 
-Most of my time goes to **developer infrastructure**. I'm drawn to the problems where
-the popular tool is the wrong *shape* for the question — where everyone reaches for a
-vector index and the question was never about similarity.
+I'm a first-year CS student at **San Francisco Bay University** building systems that sit underneath the shiny part of software.
 
-The throughline in all of it is the same: **the shape of the data decides which
-questions you are allowed to ask.** Blast Radius stores one graph twice because traversal
-speed and forensic precision want different shapes. The cache keys on meaning because an
-exact-match key never hits on LLM traffic. Meridian tracks tax lots individually because
-an average cost basis makes harvesting advice quietly wrong.
+I care about the parts that are easy to skip and painful to fake: **data models, failure modes, tests, migrations, observability, security, and the one weird query that everyone said would be too expensive.**
 
-Choose that wrong and no amount of application code rescues it. Choose it right and the
-query everyone told you was expensive collapses into one hop.
+> ### **Choose the right shape of the system first. Then write the code.**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-light.svg">
-  <img alt="The four projects drawn as one graph: shared technology is a shared node" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-dark.svg" width="100%">
-</picture>
+That's the thread connecting the things I build — graph infrastructure for dependency intelligence, semantic caching for LLM workloads, AI desktop tooling, and financial systems where correctness lives in the data model.
 
-<br>
+---
 
-## Blast Radius
+## 🎒 Inventory
 
-> **When an npm package is compromised, defenders have minutes to answer one question:
-> *who is actually exposed, right now?***
+<table><tr><td width="50%" valign="top">
 
-Every AI dev tool shipping today indexes code as embeddings and retrieves by similarity.
-A transitive reverse-dependency closure is not a similarity problem — it is a graph
-traversal, five hops deep, over tens of millions of versioned nodes. Similarity cannot
-answer it. Not badly. **At all.**
+### 💎 `BLAST RADIUS`
+**Dependency intelligence for security teams.**
 
-So I built the thing that can.
+When a package is compromised, the question isn't *"what looks similar?"* — it's **"what is actually exposed?"**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-light.svg">
-  <img alt="A Blast Radius incident session: transitive exposure, semver resolution, a live OSV lookup, and the fix - each with the latency of the query that produced it" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/terminal-dark.svg" width="100%">
-</picture>
+A graph-based system that traverses transitive dependencies, resolves semver ranges, checks OSV, and produces actionable remediation.
 
-|   | The question | How it's answered |
-| - | ------------ | ----------------- |
-| **1** | **Who is transitively exposed?** Everything that pulls it, five levels down. | One variable-length traversal from a known vertex |
-| **2** | **Whose semver range would *actually* have pulled the poison?** Declaring a dependency and resolving to the bad version are different facts. | Every declared range, evaluated against the bad version |
-| **3** | **Is anything in my lockfile already malicious?** | Live against `osv.dev` — no crawl coverage required |
-| **4** | **How do I fix it?** | The safe version, an `overrides` block, a brief an agent can act on |
+`Python` `FastAPI` `HydraDB` `OpenCypher` `SQLite` `Docker`
 
-**The data model is the whole trick.** Two layers in one graph: a collapsed
-`Package-[:REQUIRES]->Package` layer so traversal stays flat as depth grows, and a
-version-precise `Release-[:DEPENDS_ON]->Package` layer underneath so the forensic
-questions stay answerable. Traversal speed and forensic precision want different
-shapes — so I store both and let the planner pick.
+**→ [Explore the repo](https://github.com/Rohit-ATS/blast-radius)**
 
-<sub>**Python · FastAPI · HydraDB (OpenCypher) · SQLite · Supabase · Docker · vanilla JS, zero build step**<br>27k lines &nbsp;·&nbsp; 381 tests &nbsp;·&nbsp; MIT &nbsp;·&nbsp; built solo over a hackathon weekend for Hack Hydra</sub>
+</td><td width="50%" valign="top">
 
-<br>
+### 🧠 `VIVEDLY AI`
+**A proactive AI desktop coworker.**
 
-## Also building
+Instead of waiting for a prompt, Vivedly watches the work context and surfaces the next useful action — with layered memory, MCP tools, streaming voice, and native desktop control.
 
-<table>
-<tr>
-<td width="33%" valign="top">
+`Electron` `React` `TypeScript` `SQLite` `MCP` `AI`
 
-### [Vivedly AI](https://github.com/Rohit-ATS/Vivedly-AI)
-**~11k lines · Electron + React**
+**→ [Explore the repo](https://github.com/Rohit-ATS/Vivedly-AI)**
 
-A proactive desktop coworker — it watches what you're working on and surfaces the
-right action *before* you ask. A five-tier memory hierarchy (RAM → SQLite → patterns →
-vector → long-term) instead of one vector DB. Native desktop control, an MCP tool layer,
-streaming voice, and connectors for Gmail, Slack, Notion, and GitHub.
+</td></tr><tr><td width="50%" valign="top">
 
-</td>
-<td width="33%" valign="top">
+### 📈 `MERIDIAN`
+**An AI-native financial terminal.**
 
-### [Meridian](https://github.com/Rohit-ATS/meridian)
-**~20k lines · Next.js 16 + React 19**
+Fifteen views, options priced with Black-Scholes, and tax lots represented individually because financial software should preserve the information needed to make correct decisions.
 
-An AI-native financial terminal — fifteen views, options priced with Black-Scholes,
-and tax lots tracked individually rather than by average basis. Market data is
-**simulated**, deliberately: it runs with no API key, and the feed swaps at one
-function.
+`Next.js` `React` `TypeScript` `PostgreSQL` `AI`
 
-</td>
-<td width="33%" valign="top">
+**→ [Explore the repo](https://github.com/Rohit-ATS/meridian)**
 
-### [Semantic Output Cache](https://github.com/Rohit-ATS/semantic-output-cache)
-**~4.8k lines · Postgres + pgvector**
+</td><td width="50%" valign="top">
 
-Exact-match caches never hit on LLM traffic — nobody phrases it twice the same way.
-This one embeds each output and serves it when cosine similarity clears a threshold.
-Only SHA-256 key hashes stored, JS + Python SDKs, and a threat model in the repo.
+### ⚡ `SEMANTIC OUTPUT CACHE`
+**Caching for the way humans actually talk to LLMs.**
 
-</td>
-</tr>
-</table>
+Exact-match caching assumes users phrase the same request twice. They don't. Semantic similarity turns repeated intent into a cache hit.
 
-<br>
+`Postgres` `pgvector` `SHA-256` `Python` `JavaScript`
 
-## The stack
+**→ [Explore the repo](https://github.com/Rohit-ATS/semantic-output-cache)**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-light.svg">
-  <img alt="Stack: Python, TypeScript, SQL and Cypher, Bash · HydraDB, PostgreSQL, pgvector, SQLite, Redis, Prisma · Claude API, MCP servers, Ollama, Whisper, embeddings · React 19, Next.js 16, Electron, Tailwind v4 · Docker, FastAPI, Render, Vercel, GitHub Actions" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-dark.svg" width="100%">
-</picture>
+</td></tr></table>
 
-<br>
+---
 
-## Activity
+## 🧱 My Build Philosophy
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-light.svg">
-  <img alt="GitHub statistics: contributions, commits, pull requests, repositories, stars, followers, and the language mix" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-dark.svg" width="100%">
-</picture>
+<table><tr><td width="25%" align="center"><br>🧭<br><b>Model first</b><br><sub>The data shape determines what the system can answer.</sub><br><br></td><td width="25%" align="center"><br>🧪<br><b>Measure it</b><br><sub>If I claim it's fast, there's a number behind it.</sub><br><br></td><td width="25%" align="center"><br>🛡️<br><b>Design for failure</b><br><sub>Production starts where the happy path ends.</sub><br><br></td><td width="25%" align="center"><br>❤️‍🔥<br><b>Ship with care</b><br><sub>Fast doesn't mean careless.</sub><br><br></td></tr></table>
 
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-light.svg">
-  <img alt="A snake eating a year of my contribution graph" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg" width="100%">
-</picture>
-
-<br>
-
-<!-- The stats card above is generated by .github/workflows/assets.yml straight into
-     the `output` branch, so nothing third-party sits between a visitor and the image.
-
-     That replaced two services that both failed in the same way. The public
-     github-readme-stats instance returns 503 on every endpoint for long stretches.
-     streak-stats.demolab.com recomputes per distinct URL and a cold one takes 10-30s to
-     first byte, which is longer than GitHub's camo proxy waits - camo 504s, caches the
-     failure, and the card renders as alt text. Warming it by hand worked, and would
-     have needed doing again on any re-theme.
-
-     Stars and followers are not on the card on purpose. On an account opened in 2024
-     they measure reach and age rather than work - the same reason hide_rank is the
-     right call on a github-readme-stats card.
-
-     Private contributions are still not counted: the Actions token can read public
-     contribution data but not restricted counts. Adding a `repo`-scoped PAT as a repo
-     secret and reading it in build_stats.py would unlock those. -->
-
-<br>
-
-## Off the clock
-
-Paris, 1858. Morphy is at the opera, playing two noblemen sharing a board. He gives
-away both rooks and the queen, and mates on move seventeen with the only two pieces
-he has left. It is the game people are shown to learn that development and tempo
-beat material — that what you *have* matters less than what it can reach.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-light.svg">
-  <img alt="Morphy's Opera Game of 1858, replayed move by move" src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/chess-dark.svg" width="100%">
-</picture>
-
-<br>
-
-## How I build
-
-Four rules I hold every project to. They're unglamorous, and they're where most of the
-real decisions end up.
-
-**No mocked data. Anywhere.** Every number on every screen comes back from a query that
-was actually run — including empty states. A demo that lies is worse than no demo.
-
-**Measured, not claimed.** Every panel in Blast Radius carries the latency of the query
-that produced it. If I say it's fast, there's a number next to the claim.
-
-**Secrets are a design problem, not a checklist item.** From that repo's `.gitignore`,
-verbatim:
-
-```gitignore
-# Deliberately a glob: .env.production was not covered by the explicit list,
-# which is the failure mode this pattern exists to prevent.
-
-# SQLite side files, for every database this project grows. Listing each one by
-# name has already failed once: the -shm and -wal here were git added first and
-# ignored second, and .gitignore does not apply to anything already in the
-# index, so they stayed staged and would have been committed.
+```text
+┌──────────────────────────────────────────────────────────────────┐
+│                         THE CRAFT LOOP                           │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   PROBLEM  →  MODEL  →  BUILD  →  TEST  →  MEASURE  →  SHIP     │
+│      ↑                                               │           │
+│      └────────────────── LEARN ←─────────────────────┘           │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-**Commits explain the change, not the diff.** `Answer the lockfile question from the
-lockfile.` `Keep the site up when its dependencies are not.` You can read the history
-and know what happened.
+**No fake demos. No hand-wavy architecture. No hiding the hard parts.**
 
-<br>
+---
 
-## Reach me
-
-I'm a freshman, I move fast, and I'd rather build the hard version. If you're working on
-graph systems, agent infrastructure, or developer tooling — or you want someone who ships
-over a hackathon weekend and still writes the tests — I'd like to hear from you.
-
-**[rohitmaruriats@gmail.com](mailto:rohitmaruriats@gmail.com)** &nbsp;·&nbsp; open to internships, hackathon teams, and OSS collaboration
+## ⚒️ Tech I Reach For
 
 <div align="center">
+<img src="https://skillicons.dev/icons?i=python,typescript,js,react,nextjs,electron,fastapi,nodejs,postgres,sqlite,redis,docker,git,github,linux&perline=8" alt="Technology icons" />
+<br><br>
+`Python` · `TypeScript` · `SQL` · `Cypher` · `React` · `Next.js` · `Electron` · `FastAPI` · `PostgreSQL` · `pgvector` · `SQLite` · `Redis` · `Docker` · `MCP` · `LLMs`
+</div>
+
+---
+
+## 🟩 Current Quest
+
+```text
+╔══════════════════════════════════════════════════════════════╗
+║  QUEST LOG                                                   ║
+╠══════════════════════════════════════════════════════════════╣
+║  [✓] Build systems that solve real problems                  ║
+║  [✓] Learn by shipping                                       ║
+║  [✓] Break things → understand them → rebuild them better    ║
+║  [→] Go deeper on agent infrastructure                       ║
+║  [→] Build stranger, harder developer tools                  ║
+║  [→] Keep becoming dangerous with distributed systems        ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+### 🌱 Things I'm exploring
+
+`Agentic systems` · `Graph databases` · `AI infrastructure` · `Developer experience` · `Semantic retrieval` · `Distributed systems` · `Security tooling`
+
+---
+
+## 📊 World Save
+
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Rohit-ATS&show_icons=true&hide_border=true&bg_color=00000000&title_color=6ee77f&text_color=9fb09f&icon_color=6ee77f&ring_color=6ee77f&cache_seconds=86400" height="170" alt="GitHub statistics" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rohit-ATS&layout=compact&hide_border=true&bg_color=00000000&title_color=6ee77f&text_color=9fb09f&icon_color=6ee77f&cache_seconds=86400" height="170" alt="Top languages" />
+<br><br>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Rohit-ATS&hide_border=true&background=00000000&ring=6ee77f&fire=6ee77f&currStreakLabel=6ee77f&sideLabels=9fb09f&dates=6f806f&currStreakNum=eaf5e9&sideNums=eaf5e9" width="80%" alt="GitHub contribution streak" />
+</div>
+
+---
+
+## 🐍 The World Keeps Moving
+
+<div align="center"><img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg" width="90%" alt="Contribution graph snake" /></div>
+
+---
+
+## 🧪 A Few Rules I Don't Compromise On
+
+**1. Real data beats impressive screenshots.**  
+If the number on the screen came from nowhere, the screen is lying.
+
+**2. Architecture should answer questions.**  
+A beautiful diagram that can't support the important query is decoration.
+
+**3. Tests are part of the feature.**  
+Especially the boring edge cases that become tomorrow's production incident.
+
+**4. Security starts in the model.**  
+Secrets, trust boundaries, dependency provenance and failure paths belong in design — not in a cleanup sprint.
+
+**5. Build with curiosity.**  
+The best part of coding is getting stuck on something you don't understand and refusing to leave it that way.
+
+---
+
+## 🧭 If You're Here Because...
+
+<table><tr><td>🧠 <b>You like hard engineering problems</b></td><td>🤖 <b>You're building with AI agents</b></td></tr><tr><td>🕸️ <b>You're working with graphs / infra</b></td><td>🚀 <b>You want to build something ambitious</b></td></tr></table>
+
+**Say hello.** I'm always interested in ambitious projects, hackathons, OSS collaboration, and conversations with people who genuinely love building.
+
+<div align="center">
+
+### `keep building. keep learning. keep shipping. ❤️`
+
+[**✉️ rohitmaruriats@gmail.com**](mailto:rohitmaruriats@gmail.com) · [**LinkedIn**](https://www.linkedin.com/in/rohitmaruri/) · [**GitHub**](https://github.com/Rohit-ATS)
+
 <br>
-<sub><i>Everything above is a link. The code is public and the tests are in the repo.</i></sub>
+<sub>Made with too much coffee, unreasonable curiosity, and a lot of love for code.</sub>
+
 </div>
