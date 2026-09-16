@@ -8,7 +8,7 @@
 
 <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/minecraft-hero-dark.svg" width="100%" alt="Rohit Maruri developer profile — Minecraft inspired pixel-art world" />
 
-### A builder who likes hard problems.<br>AI infrastructure, graph systems, developer tools, and software worth shipping.
+### A systems builder who likes hard problems.<br>AI infrastructure, graph systems, developer tools, and software worth shipping.
 
 <br>
 
