@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 32 32" role="img" aria-label="A dependency graph drawing itself: a root node, its edges, and a pulse travelling out to the leaves"><title>Rohit Maruri</title><style>
+    .e { stroke-dasharray: 46; stroke-dashoffset: 46;
+         animation: draw 4.2s ease-in-out infinite; }
+    .n { opacity: 0; animation: pop 4.2s ease-in-out infinite; }
+    .p { opacity: 0; animation: pulse 4.2s ease-in-out infinite; }
+    @keyframes draw {
+      0%   { stroke-dashoffset: 46; }
+      38%  { stroke-dashoffset: 0; }
+      86%  { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 46; }
+    }
+    @keyframes pop {
+      0%, 22% { opacity: 0; transform: scale(0.4); }
+      44%     { opacity: 1; transform: scale(1); }
+      86%     { opacity: 1; transform: scale(1); }
+      100%    { opacity: 0; transform: scale(0.4); }
+    }
+    @keyframes pulse {
+      0%, 46% { opacity: 0; }
+      58%     { opacity: 1; }
+      76%     { opacity: 1; }
+      100%    { opacity: 0; }
+    }</style><path class="e" d="M16 6 7 17" fill="none" stroke="#5CC79F" stroke-width="1.4" stroke-linecap="round" style="animation-delay:0.0s"/><path class="e" d="M16 6 25 17" fill="none" stroke="#5CC79F" stroke-width="1.4" stroke-linecap="round" style="animation-delay:0.0s"/><path class="e" d="M7 17 11 27" fill="none" stroke="#5CC79F" stroke-width="1.4" stroke-linecap="round" style="animation-delay:0.1s"/><path class="e" d="M25 17 21 27" fill="none" stroke="#5CC79F" stroke-width="1.4" stroke-linecap="round" style="animation-delay:0.1s"/><circle class="n" cx="16" cy="6" r="3.1" fill="#5CC79F" style="animation-delay:0.0s;transform-origin:16px 6px"/><circle class="n" cx="7" cy="17" r="2.2" fill="#5CC79F" style="animation-delay:0.12s;transform-origin:7px 17px"/><circle class="n" cx="25" cy="17" r="2.2" fill="#5CC79F" style="animation-delay:0.12s;transform-origin:25px 17px"/><circle class="n" cx="11" cy="27" r="2.2" fill="#5CC79F" style="animation-delay:0.24s;transform-origin:11px 27px"/><circle class="n" cx="21" cy="27" r="2.2" fill="#5CC79F" style="animation-delay:0.24s;transform-origin:21px 27px"/><circle class="p" cx="16" cy="6" r="5.6" fill="none" stroke="#2F8A5E" stroke-width="0.9" opacity="0"/><circle class="p" cx="11" cy="27" r="1.1" fill="#FFFDF5" style="animation-delay:0.00s"/><circle class="p" cx="21" cy="27" r="1.1" fill="#FFFDF5" style="animation-delay:0.08s"/></svg>

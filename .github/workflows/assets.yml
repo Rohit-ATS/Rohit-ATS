@@ -42,9 +42,11 @@ jobs:
           # contribution level. On dark it must be a visible slate: against GitHub's
           # #0d1117 page a near-black empty cell vanishes and the grid looks broken -
           # a snake swimming through nothing.
+          # Ramps run empty -> densest in the profile's own palette: ink and meadow on
+          # dark, sand through deep green on paper.
           outputs: |
-            dist/snake-dark.svg?color_snake=%23fafafa&color_dots=%2327272b,%233f3f46,%2371717a,%23a1a1aa,%23e4e4e7
-            dist/snake-light.svg?color_snake=%2318181b&color_dots=%23eeeeec,%23d4d4d0,%23a1a1a4,%236b6b74,%2327272b
+            dist/snake-dark.svg?color_snake=%235CC79F&color_dots=%23272921,%232E4A38,%232F8A5E,%234FB07C,%23A7E3C4
+            dist/snake-light.svg?color_snake=%2300674F&color_dots=%23EFE9D8,%23C9DDCB,%238FBCA0,%234E9370,%2300674F
 
       # build_stats.py imports design -> fonts, which subsets an OFL webfont into the
       # SVG. Without these the step dies on ImportError, and the card silently stops

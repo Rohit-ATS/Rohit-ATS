@@ -31,8 +31,12 @@ FACES = {
     # key            family                weights
     "display": ("Space Grotesk", (300, 500, 700)),
     "mono": ("JetBrains Mono", (400, 700)),
+    # The serif carries the voice lines. LexisGuide sets those in Georgia, which is a
+    # system face and therefore renders differently or not at all inside an isolated
+    # <img> document; Lora is the nearest OFL equivalent and can be embedded.
+    "serif": ("Lora", (400, 500)),
 }
-LICENSE = "Space Grotesk and JetBrains Mono, SIL Open Font License 1.1"
+LICENSE = "Space Grotesk, JetBrains Mono and Lora, SIL Open Font License 1.1"
 
 
 def _get(url: str, ua: str = UA) -> bytes:

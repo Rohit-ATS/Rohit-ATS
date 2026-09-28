@@ -22,6 +22,7 @@ import fonts
 
 DISPLAY = "Space Grotesk"
 MONO = "JetBrains Mono"
+SERIF = "Lora"
 
 # 8pt rhythm, and a type scale with real jumps in it - adjacent sizes that differ by
 # 1-2px read as a mistake rather than as hierarchy.
@@ -30,22 +31,32 @@ SP = 8
 SIZE = dict(micro=9.5, tiny=11, small=12.5, body=14.5, lead=17, sub=24,
             head=34, hero=52, mega=104)
 
+# Ink, paper, sand, green, meadow, amber - the palette LexisGuide's app and README are
+# both cut from, reused here so the profile and the project it leads with read as one
+# body of work rather than as two unrelated visual systems.
+#
+#   ink     #1B1C14   near-black with a green cast, never a neutral grey
+#   paper   #FFFDF5   warm white; a pure #FFF next to the sand reads blue
+#   sand    #ECE3CD   the light theme's rules and surfaces
+#   green   #00674F   the primary. Deep enough to hold white text at 12px
+#   meadow  #2F8A5E   the secondary, and the only bright thing in the dark theme
+#   amber   #C98A1A   used where a value means something, never as decoration
 THEMES = {
     "dark": dict(
-        bg="#0A0A0B", bg2="#0F0F11", surf="#141416", surf2="#1A1A1D",
-        line="#27272B", hair="#FFFFFF", hair_op=0.07,
-        text="#FAFAFA", text2="#A6A6AE", text3="#5E5E67",
-        ink="#EDEDF0", ink2="#9A9AA3", ink3="#6E6E78",
-        amber="#C9A227", rose="#C4646C", green="#4ADE80",
-        shadow="#000000", shadow_op=0.6, grain_op=0.035,
+        bg="#12130D", bg2="#1B1C14", surf="#20221A", surf2="#272921",
+        line="#343629", hair="#FFFDF5", hair_op=0.06,
+        text="#FFFDF5", text2="#C6C7B4", text3="#7E8172",
+        ink="#5CC79F", ink2="#2F8A5E", ink3="#8FA394",
+        amber="#D6A23C", rose="#C4646C", green="#5CC79F",
+        shadow="#000000", shadow_op=0.55, grain_op=0.03,
     ),
     "light": dict(
-        bg="#FAFAF9", bg2="#FFFFFF", surf="#FFFFFF", surf2="#F4F4F2",
-        line="#E3E3E0", hair="#FFFFFF", hair_op=0.9,
-        text="#0B0B0C", text2="#4E4E56", text3="#8A8A93",
-        ink="#18181B", ink2="#6B6B74", ink3="#8A8A93",
-        amber="#8A6D1F", rose="#A34A52", green="#15803D",
-        shadow="#0A0A0B", shadow_op=0.12, grain_op=0.02,
+        bg="#FAF7EE", bg2="#FFFDF5", surf="#FFFDF5", surf2="#F5F0E2",
+        line="#E2D9C2", hair="#FFFFFF", hair_op=0.9,
+        text="#1B1C14", text2="#4A4C3C", text3="#8A8B76",
+        ink="#00674F", ink2="#2F8A5E", ink3="#6E7A66",
+        amber="#946515", rose="#A34A52", green="#00674F",
+        shadow="#1B1C14", shadow_op=0.10, grain_op=0.02,
     ),
 }
 
@@ -54,14 +65,24 @@ def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def w(s: str, *, size=SIZE["body"], weight=400, mono=False, track=0.0) -> float:
+def _fam(mono: bool, serif: bool) -> str:
+    return SERIF if serif else (MONO if mono else DISPLAY)
+
+
+def w(s: str, *, size=SIZE["body"], weight=400, mono=False, serif=False,
+      track=0.0) -> float:
     """Rendered width in px, from the embedded face's own advance widths."""
-    return fonts.width(s, MONO if mono else DISPLAY, weight, size, track)
+    return fonts.width(s, _fam(mono, serif), weight, size, track)
 
 
-def T(x, y, s, *, size=SIZE["body"], weight=400, mono=False, fill="#fff",
-      anchor="start", track=0.0, opacity=None, extra="") -> str:
-    fam = f"'{MONO}',ui-monospace,monospace" if mono else f"'{DISPLAY}',system-ui,sans-serif"
+def T(x, y, s, *, size=SIZE["body"], weight=400, mono=False, serif=False,
+      fill="#fff", anchor="start", track=0.0, opacity=None, extra="") -> str:
+    if serif:
+        fam = f"'{SERIF}',Georgia,serif"
+    elif mono:
+        fam = f"'{MONO}',ui-monospace,monospace"
+    else:
+        fam = f"'{DISPLAY}',system-ui,sans-serif"
     bits = [f'<text x="{x:.1f}" y="{y:.1f}"',
             f'font-family="{fam}" font-size="{size}" font-weight="{weight}" fill="{fill}"']
     if anchor != "start":
