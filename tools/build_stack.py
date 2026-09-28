@@ -21,14 +21,16 @@ COLUMNS = [
     ("LANGUAGES", "ink", [
         "Python", "TypeScript", "JavaScript", "SQL · Cypher", "Bash"]),
     ("DATA & GRAPH", "ink2", [
-        "HydraDB", "PostgreSQL", "pgvector", "SQLite · WAL", "Redis · Prisma"]),
+        "PostgreSQL · pgvector", "DynamoDB", "Aurora DSQL", "HydraDB · Cypher",
+        "SQLite · WAL · Redis"]),
     ("AI & AGENTS", "ink3", [
-        "Claude API", "MCP servers", "Ollama · local LLM", "Whisper · TTS",
+        "AWS Bedrock · Nova", "Strands Agents", "Claude API", "MCP servers",
         "Embeddings · RAG"]),
     ("INTERFACE", "text2", [
-        "React 19", "Next.js 16", "Electron", "Tailwind v4", "Vanilla JS, no build"]),
+        "React 19", "Next.js 15", "Electron", "Tailwind v4", "Vanilla JS, no build"]),
     ("INFRASTRUCTURE", "text3", [
-        "Docker · Compose", "FastAPI", "Render · Vercel", "Supabase", "GitHub Actions"]),
+        "AWS Lambda · S3 · CDK", "Docker · FastAPI", "Vercel · Amplify",
+        "Supabase", "GitHub Actions"]),
 ]
 
 

@@ -60,15 +60,15 @@ KT = [0.0, HOLD_PORTRAIT / LOOP, (HOLD_PORTRAIT + TRANS) / LOOP,
 KTS = ";".join(f"{k:.5f}" for k in KT)
 
 NAME = "ROHIT MARURI"
-ROLE = "Developer Infrastructure"
+ROLE = "Agent & Developer Infrastructure"
 META = "B.S. Computer Science  ·  San Francisco Bay University"
 BIO = ["I build the tool when the popular one is the wrong shape",
        "for the question."]
 STATUS = "OPEN TO INTERNSHIPS"
 # Set as two run-on lines of small caps rather than as pills. A row of rounded chips
 # is the single most template-looking element available, and it wastes the width.
-STACK = ["PYTHON · TYPESCRIPT · HYDRADB · POSTGRESQL · PGVECTOR · SQLITE · REDIS",
-         "FASTAPI · REACT 19 · NEXT.JS 16 · ELECTRON · DOCKER · VERCEL · GH ACTIONS"]
+STACK = ["PYTHON · TYPESCRIPT · POSTGRESQL · PGVECTOR · HYDRADB · DYNAMODB · REDIS",
+         "FASTAPI · NEXT.JS · REACT 19 · BEDROCK · MCP · DOCKER · AWS · GH ACTIONS"]
 REACH = "rohitmaruriats@gmail.com   ·   in/rohitmaruri   ·   github.com/Rohit-ATS"
 EDGE = "PROFILE — MMXXVI"
 CAPTION = "300 × 340 · floyd–steinberg · 1-bit"
