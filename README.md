@@ -1,48 +1,75 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mark-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mark-light.svg" width="104" height="104" alt="A dependency graph drawing itself">
-</picture>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="320" valign="top">
 
-# Rohit Maruri 👋
+<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/avatar-ring.svg" width="120" height="120" alt="Rohit Maruri"><br>
 
-### Software Engineer · AI/ML Systems · Agentic Workflows
+<h3>Rohit Maruri 👋</h3>
+<p><strong>Full-Stack AI Engineer</strong> · Founder, <a href="https://github.com/Rohit-ATS/Vivedly-AI">Vivedly Labs Inc.</a></p>
+<p>I build AI systems and agent infrastructure that connect models to real-world data — accessibility tools, research pipelines, and products people actually trust.</p>
 
 <p>
-  <a href="mailto:rohitmaruriats@gmail.com"><img src="https://img.shields.io/badge/Open_to-internships-143D2B?style=for-the-badge&logo=githubsponsors&logoColor=9BE59B" alt="Open to internships"></a>
-  <a href="https://www.sfbayuniversity.edu/"><img src="https://img.shields.io/badge/Computer_Science-SFBU-143D2B?style=for-the-badge&logo=bookstack&logoColor=9BE59B" alt="Computer Science at SFBU"></a>
-  <a href="https://www.linkedin.com/in/rohitmaruri/"><img src="https://img.shields.io/badge/Connect-LinkedIn-143D2B?style=for-the-badge&logo=linkedin&logoColor=9BE59B" alt="LinkedIn"></a>
+<img src="https://img.shields.io/badge/🚀_Ship_fast-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
+<img src="https://img.shields.io/badge/📊_Measure_everything-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
+<img src="https://img.shields.io/badge/🌱_Build_in_public-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
 </p>
 
-I build AI systems and full-stack products that connect models to real-world data and workflows. My work spans **agent infrastructure, accessibility, collaborative AI, and real-time applications** — with a focus on useful outcomes, measurable results, and systems people can trust.
+<p>📍 San Francisco Bay Area &nbsp;·&nbsp; 🎓 CS @ SFBU (GPA 4.0)<br>
+✉️ <a href="mailto:rohitmaruriats@gmail.com">rohitmaruriats@gmail.com</a></p>
+
+<p><strong>Highlights</strong><br>
+🏆 Finalist — Stanford-Berkeley Big Game Day<br>
+🥈 2nd Place — Flower Labs @ Stanford<br>
+🛰️ Built for NASA Space Apps 2026<br>
+🔬 Undergraduate Student Researcher<br>
+📦 8+ repos shipped this year</p>
+
+<p>
+<a href="https://github.com/Rohit-ATS"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=3DDC84" /></a>
+<a href="https://www.linkedin.com/in/rohitmaruri/"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=38BDF8" /></a><br>
+<a href="https://leetcode.com/u/rohitmaruriats/"><img src="https://img.shields.io/badge/LeetCode-0D1117?style=for-the-badge&logo=leetcode&logoColor=3DDC84" /></a>
+<a href="https://codeforces.com/profile/rohitmaruriats"><img src="https://img.shields.io/badge/Codeforces-0D1117?style=for-the-badge&logo=codeforces&logoColor=38BDF8" /></a>
+</p>
+
+</td>
+<td width="20"></td>
+<td valign="top">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-strip-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-strip-light.svg" width="100%" alt="Total stars, repositories, contributions this year, and followers">
+</picture>
+
+<p><strong>Contribution Activity</strong></p>
+
+<img src="https://ghchart.rshah.org/3DDC84/Rohit-ATS" width="100%" alt="Rohit's GitHub contribution calendar">
+
+<p><strong>Tech Stack</strong></p>
+
+<p>
+<img src="https://skillicons.dev/icons?i=py,cpp,ts,js,react,nextjs,fastapi,postgres,aws,docker,git,github" alt="Python, C++, TypeScript, JavaScript, React, Next.js, FastAPI, PostgreSQL, AWS, Docker, Git, GitHub" />
+</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-light.svg" width="380" alt="A rotating line about how I build things">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-light.svg" width="100%" alt="A rotating line about how I build things">
 </picture>
 
-<p>
-  <img alt="Python" src="https://img.shields.io/badge/Python-1D5039?style=flat-square&logo=python&logoColor=white">
-  <img alt="C++" src="https://img.shields.io/badge/C++-1D5039?style=flat-square&logo=cplusplus&logoColor=white">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-1D5039?style=flat-square&logo=typescript&logoColor=white">
-  <img alt="React" src="https://img.shields.io/badge/React-1D5039?style=flat-square&logo=react&logoColor=white">
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-1D5039?style=flat-square&logo=fastapi&logoColor=white">
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-1D5039?style=flat-square&logo=postgresql&logoColor=white">
-  <img alt="AWS" src="https://img.shields.io/badge/AWS_AI-1D5039?style=flat-square&logo=amazonaws&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-1D5039?style=flat-square&logo=docker&logoColor=white">
-</p>
+</td>
+</tr>
+</table>
 
-[Email](mailto:rohitmaruriats@gmail.com) · [LinkedIn](https://www.linkedin.com/in/rohitmaruri/) · [GitHub](https://github.com/Rohit-ATS) · [LeetCode](https://leetcode.com/u/rohitmaruriats/) · [Codeforces](https://codeforces.com/profile/rohitmaruriats)
+<p>
+  <a href="#featured-projects"><img alt="Projects" src="https://img.shields.io/badge/Featured_Projects-161B22?style=for-the-badge"></a>
+  <a href="#selected-engineering-work"><img alt="Engineering" src="https://img.shields.io/badge/Engineering-161B22?style=for-the-badge"></a>
+  <a href="#hackathons"><img alt="Hackathons" src="https://img.shields.io/badge/Hackathons-161B22?style=for-the-badge"></a>
+  <a href="#research--experience"><img alt="Research" src="https://img.shields.io/badge/Research-161B22?style=for-the-badge"></a>
+  <a href="#toolkit"><img alt="Toolkit" src="https://img.shields.io/badge/Toolkit-161B22?style=for-the-badge"></a>
+</p>
 
 </div>
-
-<p align="center">
-  <a href="#featured-projects"><img alt="Projects" src="https://img.shields.io/badge/Featured_Projects-14251D?style=for-the-badge"></a>
-  <a href="#selected-engineering-work"><img alt="Engineering" src="https://img.shields.io/badge/Engineering-14251D?style=for-the-badge"></a>
-  <a href="#research--experience"><img alt="Research and experience" src="https://img.shields.io/badge/Research_%26_Experience-14251D?style=for-the-badge"></a>
-  <a href="#toolkit"><img alt="Toolkit" src="https://img.shields.io/badge/Toolkit-14251D?style=for-the-badge"></a>
-</p>
 
 ## Featured projects
 
@@ -54,13 +81,13 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
       <h3>🦯 GuideEye</h3>
       <p>Accessibility app combining obstacle-aware navigation, real-time object detection, and Google Maps data to support visually impaired travelers.</p>
       <p><strong>5,000+ route scenarios</strong> analyzed · Sign-language translation at <strong>97% accuracy</strong> · Split mobile/cloud processing under <strong>2,000 ms</strong></p>
-      <sub>Finalist · Stanford-UC Berkeley Big Game Day Hackathon</sub>
+      <sub>🏆 Finalist · Stanford-UC Berkeley Big Game Day Hackathon</sub>
     </td>
     <td width="50%" valign="top">
       <h3>🔥 FireWatch</h3>
       <p>Wildfire response platform that brings together live camera imagery, NASA FIRMS hotspots, and weather data for a three-signal view of incidents.</p>
       <p><strong>Federated learning</strong> across three stations with Flower FedAvg · Human-approved dispatch · Three incident review and status endpoints</p>
-      <sub>2nd place · Flower Labs Collaborative Agent Hackathon at Stanford</sub>
+      <sub>🥈 2nd place · Flower Labs Collaborative Agent Hackathon at Stanford</sub>
     </td>
   </tr>
   <tr>
@@ -68,13 +95,35 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
       <h3>🚀 Crimson Exodus</h3>
       <p>Multiplayer Mars survival game using NASA satellite and rover data for terrain analysis and AI-assistant training.</p>
       <p><strong>5 datasets</strong> · <strong>15+</strong> environmental and survival constraints · Real-time multiplayer for <strong>50+</strong> simultaneous sessions</p>
-      <sub>Built for NASA Space Apps 2026</sub>
+      <sub>🛰️ Built for NASA Space Apps 2026 ·
+      <img src="https://img.shields.io/github/stars/Rohit-ATS/Crimson-Exodus?style=flat-square&color=3DDC84&label=" valign="middle"/>
+      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Crimson-Exodus?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
     </td>
     <td width="50%" valign="top">
       <h3>🤖 Mesa AI</h3>
       <p>Agentic workflow built for a real business to automate administrative processes and return time to the team.</p>
       <p>Automated <strong>80%</strong> of administrative work · Saved <strong>20+ hours per week</strong> · <strong>97% workflow success rate</strong></p>
-      <sub>Stanford 30x30 Business Hackathon</sub>
+      <sub>🏅 Stanford 30×30 Business Hackathon ·
+      <img src="https://img.shields.io/github/stars/Rohit-ATS/Mesa-AI?style=flat-square&color=3DDC84&label=" valign="middle"/>
+      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Mesa-AI?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💼 Relay CRM</h3>
+      <p>AI-native CRM built in a one-day hackathon sprint: CSV import → account/contact/deal records → AI-drafted outreach → human approval → simulated reply → auto-updated records.</p>
+      <p>Next.js App Router · TypeScript · Zod-validated AI JSON · dark, Attio-style UI</p>
+      <sub>⚡ Built in a single day ·
+      <img src="https://img.shields.io/github/stars/Rohit-ATS/Relay-CRM?style=flat-square&color=3DDC84&label=" valign="middle"/>
+      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Relay-CRM?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🔒 Airlock</h3>
+      <p>Proves an irreversible production change — schema migrations, data ops, right-to-erasure — on a shadow copy before anyone approves it.</p>
+      <p>TypeScript · Next.js 15 · Postgres shadow branches · MCP server · hash-chain ledger</p>
+      <sub>✅ 201 tests / 24 suites ·
+      <img src="https://img.shields.io/github/stars/Rohit-ATS/Airlock?style=flat-square&color=3DDC84&label=" valign="middle"/>
+      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Airlock?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
     </td>
   </tr>
 </table>
@@ -88,15 +137,32 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
 
 [LexisGuide](https://github.com/k1lst1x/LexisGuide) · [DOCKET](https://github.com/k1lst1x/DOCKET) · [FORGE](https://github.com/k1lst1x/FORGE) · [Airlock](https://github.com/Rohit-ATS/Airlock) · [Semantic Output Cache](https://github.com/Rohit-ATS/semantic-output-cache) — every repository is public, MIT, and has its tests in it.
 
+## Hackathons
+
+A regular hackathon competitor — recent builds span agent safety gating, supply-chain security, self-healing scrapers, voice-driven payroll, and graph-based incident response.
+
+| Event | Build | Focus |
+|---|---|---|
+| Zero Downtime Hackathon | **FORGE** | Agent that builds software from a brief, then audits and self-repairs what it ships |
+| Hack Hydra · HydraDB OSS Hackathon | **Blast Radius** | npm supply-chain incident response over 36K+ packages, solo build |
+| Agent Harness Hackathon (WeMakeDevs × TrueFoundry) | **AIRLOCK** | Irreversible production changes behind sandbox-proven rollback certificates |
+| Into the Scrape-Verse | **SYMBIOTE** | Self-healing data plane for scrapers, tracking AI pricing/model deprecation |
+| Collaborative Agent Hackathon @ Stanford (Flower Labs) | **FireWatch** | Federated wildfire detection — 🥈 2nd place |
+| Graph Hacks: Context for AI Agents (FalkorDB) | **BLACKBOX** | On-call incident agent over a graph database |
+| Monad Metropolis | **Remi** | Voice-driven cross-border payroll for US small businesses |
+| 30×30 Real Business AI Buildathon @ Stanford | **Mesa AI** | Agentic automation for a real small business |
+| AssemblyAI Dictation Hackathon | — | Real-time dictation on AssemblyAI's beta API |
+| AWS Agents for Humans (Devpost) | — | Agent built on the Strands Agents SDK |
+
 ## Research & experience
 
-**Undergraduate Student Researcher · San Francisco Bay University**  
+**Undergraduate Student Researcher · San Francisco Bay University**
 Working with machine-learning models, vision-language models, and large language models. Current research includes image-based prediction, evaluation workflows over five large datasets, AWS Trainium/Neuron, and multi-agent drone-swarm simulation. Recent experiments measured **92% model accuracy** and **sub-5,000 ms VLM latency**.
 
-**Information Technology Assistant · The Clarion**  
+**Information Technology Assistant · The Clarion**
 Rebuilt the publication's online reading experience, supporting growth from **500 to 3,000 monthly readers**. Also improved customer-support intake and email routing, publishing pipelines, access controls, and day-to-day IT operations.
 
-**IT Assistant · Dominion Academy of Dayton**  
+**IT Assistant · Dominion Academy of Dayton**
 Supported more than **60 devices**, resolved **500+ support tickets**, and helped manage access for **160 accounts**.
 
 ## Toolkit
@@ -111,7 +177,7 @@ Supported more than **60 devices**, resolved **500+ support tickets**, and helpe
 
 ## Education
 
-**B.S. Computer Science · San Francisco Bay University** · GPA **4.0**  
+**B.S. Computer Science · San Francisco Bay University** · GPA **4.0**
 Student Researcher · ACM · IEEE
 
 ## Activity
