@@ -1,75 +1,27 @@
 <div align="center">
 
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="320" valign="top">
-
-<img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/avatar-ring.svg" width="120" height="120" alt="Rohit Maruri"><br>
-
-<h3>Rohit Maruri 👋</h3>
-<p><strong>Full-Stack AI Engineer</strong> · Founder, <a href="https://github.com/Rohit-ATS/Vivedly-AI">Vivedly Labs Inc.</a></p>
-<p>I build AI systems and agent infrastructure that connect models to real-world data — accessibility tools, research pipelines, and products people actually trust.</p>
-
-<p>
-<img src="https://img.shields.io/badge/🚀_Ship_fast-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
-<img src="https://img.shields.io/badge/📊_Measure_everything-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
-<img src="https://img.shields.io/badge/🌱_Build_in_public-0D1117?style=flat-square&color=161B22&labelColor=161B22"/>
-</p>
-
-<p>📍 San Francisco Bay Area &nbsp;·&nbsp; 🎓 CS @ SFBU (GPA 4.0)<br>
-✉️ <a href="mailto:rohitmaruriats@gmail.com">rohitmaruriats@gmail.com</a></p>
-
-<p><strong>Highlights</strong><br>
-🏆 Finalist — Stanford-Berkeley Big Game Day<br>
-🥈 2nd Place — Flower Labs @ Stanford<br>
-🛰️ Built for NASA Space Apps 2026<br>
-🔬 Undergraduate Student Researcher<br>
-📦 8+ repos shipped this year</p>
-
-<p>
-<a href="https://github.com/Rohit-ATS"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=3DDC84" /></a>
-<a href="https://www.linkedin.com/in/rohitmaruri/"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=38BDF8" /></a><br>
-<a href="https://leetcode.com/u/rohitmaruriats/"><img src="https://img.shields.io/badge/LeetCode-0D1117?style=for-the-badge&logo=leetcode&logoColor=3DDC84" /></a>
-<a href="https://codeforces.com/profile/rohitmaruriats"><img src="https://img.shields.io/badge/Codeforces-0D1117?style=for-the-badge&logo=codeforces&logoColor=38BDF8" /></a>
-</p>
-
-</td>
-<td width="20"></td>
-<td valign="top">
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-strip-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-strip-light.svg" width="100%" alt="Total stars, repositories, contributions this year, and followers">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/banner-light.svg" width="100%" alt="Rohit Maruri — Agent &amp; Developer Infrastructure, B.S. Computer Science at San Francisco Bay University">
 </picture>
 
-<p><strong>Contribution Activity</strong></p>
-
-<img src="https://ghchart.rshah.org/3DDC84/Rohit-ATS" width="100%" alt="Rohit's GitHub contribution calendar">
-
-<p><strong>Tech Stack</strong></p>
-
-<p>
-<img src="https://skillicons.dev/icons?i=py,cpp,ts,js,react,nextjs,fastapi,postgres,aws,docker,git,github" alt="Python, C++, TypeScript, JavaScript, React, Next.js, FastAPI, PostgreSQL, AWS, Docker, Git, GitHub" />
-</p>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-light.svg" width="100%" alt="A rotating line about how I build things">
-</picture>
-
-</td>
-</tr>
-</table>
-
-<p>
-  <a href="#featured-projects"><img alt="Projects" src="https://img.shields.io/badge/Featured_Projects-161B22?style=for-the-badge"></a>
-  <a href="#selected-engineering-work"><img alt="Engineering" src="https://img.shields.io/badge/Engineering-161B22?style=for-the-badge"></a>
-  <a href="#hackathons"><img alt="Hackathons" src="https://img.shields.io/badge/Hackathons-161B22?style=for-the-badge"></a>
-  <a href="#research--experience"><img alt="Research" src="https://img.shields.io/badge/Research-161B22?style=for-the-badge"></a>
-  <a href="#toolkit"><img alt="Toolkit" src="https://img.shields.io/badge/Toolkit-161B22?style=for-the-badge"></a>
-</p>
+**[Featured Projects](#featured-projects) · [Engineering](#selected-engineering-work) · [Hackathons](#hackathons) · [Research](#research--experience) · [Toolkit](#toolkit)**
 
 </div>
+
+## The stack
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/stack-light.svg" width="100%" alt="Languages, data & graph, AI & agents, interface, and infrastructure tools, by layer">
+</picture>
+
+## The work, as a graph
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/constellation-light.svg" width="100%" alt="Four shipped projects drawn as a graph, with shared technology as shared nodes">
+</picture>
 
 ## Featured projects
 
@@ -95,17 +47,13 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
       <h3>🚀 Crimson Exodus</h3>
       <p>Multiplayer Mars survival game using NASA satellite and rover data for terrain analysis and AI-assistant training.</p>
       <p><strong>5 datasets</strong> · <strong>15+</strong> environmental and survival constraints · Real-time multiplayer for <strong>50+</strong> simultaneous sessions</p>
-      <sub>🛰️ Built for NASA Space Apps 2026 ·
-      <img src="https://img.shields.io/github/stars/Rohit-ATS/Crimson-Exodus?style=flat-square&color=3DDC84&label=" valign="middle"/>
-      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Crimson-Exodus?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+      <sub>🛰️ Built for NASA Space Apps 2026</sub>
     </td>
     <td width="50%" valign="top">
       <h3>🤖 Mesa AI</h3>
       <p>Agentic workflow built for a real business to automate administrative processes and return time to the team.</p>
       <p>Automated <strong>80%</strong> of administrative work · Saved <strong>20+ hours per week</strong> · <strong>97% workflow success rate</strong></p>
-      <sub>🏅 Stanford 30×30 Business Hackathon ·
-      <img src="https://img.shields.io/github/stars/Rohit-ATS/Mesa-AI?style=flat-square&color=3DDC84&label=" valign="middle"/>
-      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Mesa-AI?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+      <sub>🏅 Stanford 30×30 Business Hackathon</sub>
     </td>
   </tr>
   <tr>
@@ -113,17 +61,13 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
       <h3>💼 Relay CRM</h3>
       <p>AI-native CRM built in a one-day hackathon sprint: CSV import → account/contact/deal records → AI-drafted outreach → human approval → simulated reply → auto-updated records.</p>
       <p>Next.js App Router · TypeScript · Zod-validated AI JSON · dark, Attio-style UI</p>
-      <sub>⚡ Built in a single day ·
-      <img src="https://img.shields.io/github/stars/Rohit-ATS/Relay-CRM?style=flat-square&color=3DDC84&label=" valign="middle"/>
-      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Relay-CRM?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+      <sub>⚡ Built in a single day · <a href="https://github.com/Rohit-ATS/Relay-CRM">Relay-CRM</a></sub>
     </td>
     <td width="50%" valign="top">
       <h3>🔒 Airlock</h3>
       <p>Proves an irreversible production change — schema migrations, data ops, right-to-erasure — on a shadow copy before anyone approves it.</p>
       <p>TypeScript · Next.js 15 · Postgres shadow branches · MCP server · hash-chain ledger</p>
-      <sub>✅ 201 tests / 24 suites ·
-      <img src="https://img.shields.io/github/stars/Rohit-ATS/Airlock?style=flat-square&color=3DDC84&label=" valign="middle"/>
-      <img src="https://img.shields.io/github/languages/top/Rohit-ATS/Airlock?style=flat-square&color=38BDF8&label=" valign="middle"/></sub>
+      <sub>✅ 201 tests / 24 suites · <a href="https://github.com/Rohit-ATS/Airlock">Airlock</a></sub>
     </td>
   </tr>
 </table>
@@ -202,6 +146,6 @@ Student Researcher · ACM · IEEE
 
 **Open to internships, research collaborations, and building with ambitious teams.**
 
-[Say hello](mailto:rohitmaruriats@gmail.com) · [LinkedIn](https://www.linkedin.com/in/rohitmaruri/)
+[Say hello](mailto:rohitmaruriats@gmail.com) · [LinkedIn](https://www.linkedin.com/in/rohitmaruri/) · [LeetCode](https://leetcode.com/u/rohitmaruriats/) · [Codeforces](https://codeforces.com/profile/rohitmaruriats)
 
 </div>

@@ -217,47 +217,6 @@ def build(theme: str, d: dict) -> str:
     return "".join(o)
 
 
-STRIP_W, STRIP_H = 1180, 132
-STRIP_FIELDS = [("stars", "STARS"), ("repos", "REPOSITORIES"),
-                ("contributions", "CONTRIBUTIONS (YEAR)"), ("followers", "FOLLOWERS")]
-
-
-def build_strip(theme: str, d: dict) -> str:
-    """assets/stats-strip-{dark,light}.svg - the four headline counts as one row.
-
-    `build()` above deliberately drops stars and followers - reach, not work, on an
-    account this young. This panel exists anyway because a profile is also a landing
-    page, and a visitor's first question is still "is this a real, active account" -
-    four numbers answer that in one glance before the dot-matrix card below argues the
-    harder case. Same cards, same type, same dot field as every other panel; this is a
-    companion to build(), not a replacement for its judgment.
-    """
-    c = D.THEMES[theme]
-    chars = fonts.charset("".join(l for _, l in STRIP_FIELDS) + "0123456789,")
-    css, _ = fonts.embed_faces(chars)
-
-    o = [D.svg_open(STRIP_W, STRIP_H, f"GitHub overview for {USER}",
-                    "Total stars, public repositories, contributions this year, "
-                    "and followers.", css),
-         D.defs(c),
-         D.page(STRIP_W, STRIP_H, c)]
-
-    pad, gap = 28, 20
-    cw = (STRIP_W - pad * 2 - gap * 3) / 4
-    ch = STRIP_H - pad * 2
-    for i, (key, label) in enumerate(STRIP_FIELDS):
-        x = pad + i * (cw + gap)
-        o.append(D.card(x, pad, cw, ch, c, radius=14))
-        val = f"{d[key]:,}"
-        o.append(T(x + 22, pad + ch * 0.56, val, size=SIZE["head"], weight=500,
-                   fill=c["ink"], track=-0.01))
-        o.append(T(x + 22, pad + ch * 0.82, label, size=SIZE["micro"], weight=700,
-                   fill=c["text3"], track=0.16))
-
-    o.append("</svg>")
-    return "".join(o)
-
-
 def main() -> None:
     out = sys.argv[1] if len(sys.argv) > 1 else "../assets"
     d = digest(fetch())
@@ -269,11 +228,6 @@ def main() -> None:
         path = os.path.join(out, f"stats-{theme}.svg")
         open(path, "w", encoding="utf-8").write(svg)
         print(f"{path}: {len(svg.encode()) / 1024:6.1f} KB")
-
-        strip = build_strip(theme, d)
-        strip_path = os.path.join(out, f"stats-strip-{theme}.svg")
-        open(strip_path, "w", encoding="utf-8").write(strip)
-        print(f"{strip_path}: {len(strip.encode()) / 1024:6.1f} KB")
 
 
 if __name__ == "__main__":
