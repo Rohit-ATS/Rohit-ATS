@@ -17,6 +17,11 @@
 
 I build AI systems and full-stack products that connect models to real-world data and workflows. My work spans **agent infrastructure, accessibility, collaborative AI, and real-time applications** — with a focus on useful outcomes, measurable results, and systems people can trust.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-light.svg" width="380" alt="A rotating line about how I build things">
+</picture>
+
 <p>
   <img alt="Python" src="https://img.shields.io/badge/Python-1D5039?style=flat-square&logo=python&logoColor=white">
   <img alt="C++" src="https://img.shields.io/badge/C++-1D5039?style=flat-square&logo=cplusplus&logoColor=white">
@@ -76,13 +81,12 @@ Projects from my resume, focused on applied AI, real-world workflows, and collab
 
 ## Selected engineering work
 
-| Project | What it does | Engineering signal |
-|---|---|---|
-| [**Airlock**](https://github.com/Rohit-ATS/Airlock) | Tests a proposed production change on a shadow copy before approval. | Apply, undo, and checksum comparison; 201 tests across 24 suites. |
-| [**Semantic Output Cache**](https://github.com/Rohit-ATS/semantic-output-cache) | Reuses semantically similar LLM outputs with PostgreSQL, pgvector, and Redis. | Redis accelerates lookups but is not required; keys are hashed before storage. |
-| [**blast-radius**](https://github.com/Rohit-ATS/blast-radius) | Maps npm supply-chain exposure through graph traversal. | 381 tests; built solo over a hackathon weekend. |
-| [**DOCKET**](https://github.com/k1lst1x/DOCKET) | Helps neighborhood groups follow city decisions with source-linked answers. | 81 tests; citation and refusal evaluations included. |
-| [**FORGE**](https://github.com/k1lst1x/FORGE) | Builds and checks software changes through an agent workflow. | 17 live checks; stops at the pull request for human review. |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/projects-dark.svg">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/projects-light.svg" width="100%" alt="Five shipped projects, one row each: what it is, what it's built from, and the number on it that's checkable">
+</picture>
+
+[LexisGuide](https://github.com/k1lst1x/LexisGuide) · [DOCKET](https://github.com/k1lst1x/DOCKET) · [FORGE](https://github.com/k1lst1x/FORGE) · [Airlock](https://github.com/Rohit-ATS/Airlock) · [Semantic Output Cache](https://github.com/Rohit-ATS/semantic-output-cache) — every repository is public, MIT, and has its tests in it.
 
 ## Research & experience
 
