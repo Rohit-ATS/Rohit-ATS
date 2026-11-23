@@ -2,148 +2,113 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mark-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mark-light.svg" width="120" height="120" alt="A dependency graph drawing itself — a root node, its edges, and a pulse travelling out to the leaves">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/mark-light.svg" width="104" height="104" alt="A dependency graph drawing itself">
 </picture>
 
-# Rohit Maruri
+# Rohit Maruri 👋
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/typing-light.svg" width="700" alt="I build infrastructure for agents that touch production. The shape of the data decides which questions you can ask. No mocked data, measured not claimed. Five shipped this year, every one of them has its tests.">
-</picture>
-
-CS undergrad at San Francisco Bay University building **agent and developer
-infrastructure** — systems that let an autonomous agent touch something that matters
-and then prove it did the right thing. Five shipped this year; all public, all MIT.
-
-[![Open to internships](https://img.shields.io/badge/open%20to-internships-00674F?style=flat-square)](mailto:rohitmaruriats@gmail.com)
-[![School](https://img.shields.io/badge/B.S.%20Computer%20Science-San%20Francisco%20Bay%20University-00674F?style=flat-square)](#education)
-[![Location](https://img.shields.io/badge/Fremont,%20CA-00674F?style=flat-square&logo=googlemaps&logoColor=white)](#contact)
-[![License](https://img.shields.io/badge/everything%20below-MIT-00674F?style=flat-square)](#selected-work)
+### Software Engineer · AI/ML Systems · Agentic Workflows
 
 <p>
-  <img alt="Python" src="https://img.shields.io/badge/Python-00674F?style=flat-square&logo=python&logoColor=white">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-00674F?style=flat-square&logo=typescript&logoColor=white">
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-00674F?style=flat-square&logo=fastapi&logoColor=white">
-  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-00674F?style=flat-square&logo=nextdotjs&logoColor=white">
-  <img alt="React" src="https://img.shields.io/badge/React_19-00674F?style=flat-square&logo=react&logoColor=white">
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-00674F?style=flat-square&logo=postgresql&logoColor=white">
-  <img alt="pgvector" src="https://img.shields.io/badge/pgvector-00674F?style=flat-square&logo=postgresql&logoColor=white">
-  <img alt="DynamoDB" src="https://img.shields.io/badge/DynamoDB-00674F?style=flat-square&logo=amazondynamodb&logoColor=white">
-  <img alt="AWS Bedrock" src="https://img.shields.io/badge/Bedrock_AgentCore-00674F?style=flat-square&logo=amazonaws&logoColor=white">
-  <img alt="AWS Lambda" src="https://img.shields.io/badge/Lambda-00674F?style=flat-square&logo=awslambda&logoColor=white">
-  <img alt="MCP" src="https://img.shields.io/badge/MCP_servers-00674F?style=flat-square&logo=anthropic&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-00674F?style=flat-square&logo=docker&logoColor=white">
+  <a href="mailto:rohitmaruriats@gmail.com"><img src="https://img.shields.io/badge/Open_to-internships-143D2B?style=for-the-badge&logo=githubsponsors&logoColor=9BE59B" alt="Open to internships"></a>
+  <a href="https://www.sfbayuniversity.edu/"><img src="https://img.shields.io/badge/Computer_Science-SFBU-143D2B?style=for-the-badge&logo=bookstack&logoColor=9BE59B" alt="Computer Science at SFBU"></a>
+  <a href="https://www.linkedin.com/in/rohitmaruri/"><img src="https://img.shields.io/badge/Connect-LinkedIn-143D2B?style=for-the-badge&logo=linkedin&logoColor=9BE59B" alt="LinkedIn"></a>
 </p>
 
-[**Email**](mailto:rohitmaruriats@gmail.com) · [**LinkedIn**](https://www.linkedin.com/in/rohitmaruri/) · [**LeetCode**](https://leetcode.com/u/rohitmaruriats/) · [**Codeforces**](https://codeforces.com/profile/rohitmaruriats)
+I build AI systems and full-stack products that connect models to real-world data and workflows. My work spans **agent infrastructure, accessibility, collaborative AI, and real-time applications** — with a focus on useful outcomes, measurable results, and systems people can trust.
+
+<p>
+  <img alt="Python" src="https://img.shields.io/badge/Python-1D5039?style=flat-square&logo=python&logoColor=white">
+  <img alt="C++" src="https://img.shields.io/badge/C++-1D5039?style=flat-square&logo=cplusplus&logoColor=white">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-1D5039?style=flat-square&logo=typescript&logoColor=white">
+  <img alt="React" src="https://img.shields.io/badge/React-1D5039?style=flat-square&logo=react&logoColor=white">
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-1D5039?style=flat-square&logo=fastapi&logoColor=white">
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-1D5039?style=flat-square&logo=postgresql&logoColor=white">
+  <img alt="AWS" src="https://img.shields.io/badge/AWS_AI-1D5039?style=flat-square&logo=amazonaws&logoColor=white">
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-1D5039?style=flat-square&logo=docker&logoColor=white">
+</p>
+
+[Email](mailto:rohitmaruriats@gmail.com) · [LinkedIn](https://www.linkedin.com/in/rohitmaruri/) · [GitHub](https://github.com/Rohit-ATS) · [LeetCode](https://leetcode.com/u/rohitmaruriats/) · [Codeforces](https://codeforces.com/profile/rohitmaruriats)
 
 </div>
 
 <p align="center">
-  <a href="#selected-work"><img alt="Selected work" src="https://img.shields.io/badge/Selected_work-1B1C14?style=for-the-badge"></a>
-  <a href="#the-pattern-underneath"><img alt="The pattern" src="https://img.shields.io/badge/The_pattern-1B1C14?style=for-the-badge"></a>
-  <a href="#the-stack"><img alt="Stack" src="https://img.shields.io/badge/Stack-1B1C14?style=for-the-badge"></a>
-  <a href="#how-i-build"><img alt="How I build" src="https://img.shields.io/badge/How_I_build-1B1C14?style=for-the-badge"></a>
-  <a href="#education"><img alt="Education" src="https://img.shields.io/badge/Education-1B1C14?style=for-the-badge"></a>
-  <a href="#contact"><img alt="Contact" src="https://img.shields.io/badge/Contact-1B1C14?style=for-the-badge"></a>
+  <a href="#featured-projects"><img alt="Projects" src="https://img.shields.io/badge/Featured_Projects-14251D?style=for-the-badge"></a>
+  <a href="#selected-engineering-work"><img alt="Engineering" src="https://img.shields.io/badge/Engineering-14251D?style=for-the-badge"></a>
+  <a href="#research--experience"><img alt="Research and experience" src="https://img.shields.io/badge/Research_%26_Experience-14251D?style=for-the-badge"></a>
+  <a href="#toolkit"><img alt="Toolkit" src="https://img.shields.io/badge/Toolkit-14251D?style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/projects-dark.svg">
-    <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/main/assets/projects-light.svg" width="100%" alt="Five shipped projects — LexisGuide, DOCKET, FORGE, Airlock and Semantic Output Cache — each with what it does, what it is built from, and its test or evaluation numbers">
-  </picture>
-  <br>
-  <sub>Every number on the right is in the repository it belongs to. Nothing here is a mockup.</sub>
-</p>
+## Featured projects
 
-<br>
+Projects from my resume, focused on applied AI, real-world workflows, and collaborative systems.
 
-## Selected work
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🦯 GuideEye</h3>
+      <p>Accessibility app combining obstacle-aware navigation, real-time object detection, and Google Maps data to support visually impaired travelers.</p>
+      <p><strong>5,000+ route scenarios</strong> analyzed · Sign-language translation at <strong>97% accuracy</strong> · Split mobile/cloud processing under <strong>2,000 ms</strong></p>
+      <sub>Finalist · Stanford-UC Berkeley Big Game Day Hackathon</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🔥 FireWatch</h3>
+      <p>Wildfire response platform that brings together live camera imagery, NASA FIRMS hotspots, and weather data for a three-signal view of incidents.</p>
+      <p><strong>Federated learning</strong> across three stations with Flower FedAvg · Human-approved dispatch · Three incident review and status endpoints</p>
+      <sub>2nd place · Flower Labs Collaborative Agent Hackathon at Stanford</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🚀 Crimson Exodus</h3>
+      <p>Multiplayer Mars survival game using NASA satellite and rover data for terrain analysis and AI-assistant training.</p>
+      <p><strong>5 datasets</strong> · <strong>15+</strong> environmental and survival constraints · Real-time multiplayer for <strong>50+</strong> simultaneous sessions</p>
+      <sub>Built for NASA Space Apps 2026</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🤖 Mesa AI</h3>
+      <p>Agentic workflow built for a real business to automate administrative processes and return time to the team.</p>
+      <p>Automated <strong>80%</strong> of administrative work · Saved <strong>20+ hours per week</strong> · <strong>97% workflow success rate</strong></p>
+      <sub>Stanford 30x30 Business Hackathon</sub>
+    </td>
+  </tr>
+</table>
 
-Each of these started from a question that sounded simpler than it was, and in every
-case the popular tool was the wrong *shape* for it — a vector index cannot answer a
-five-hop traversal, and an exact-match cache key never hits on traffic nobody phrases
-the same way twice.
+## Selected engineering work
 
-|  |  |
+| Project | What it does | Engineering signal |
+|---|---|---|
+| [**Airlock**](https://github.com/Rohit-ATS/Airlock) | Tests a proposed production change on a shadow copy before approval. | Apply, undo, and checksum comparison; 201 tests across 24 suites. |
+| [**Semantic Output Cache**](https://github.com/Rohit-ATS/semantic-output-cache) | Reuses semantically similar LLM outputs with PostgreSQL, pgvector, and Redis. | Redis accelerates lookups but is not required; keys are hashed before storage. |
+| [**blast-radius**](https://github.com/Rohit-ATS/blast-radius) | Maps npm supply-chain exposure through graph traversal. | 381 tests; built solo over a hackathon weekend. |
+| [**DOCKET**](https://github.com/k1lst1x/DOCKET) | Helps neighborhood groups follow city decisions with source-linked answers. | 81 tests; citation and refusal evaluations included. |
+| [**FORGE**](https://github.com/k1lst1x/FORGE) | Builds and checks software changes through an agent workflow. | 17 live checks; stops at the pull request for human review. |
+
+## Research & experience
+
+**Undergraduate Student Researcher · San Francisco Bay University**  
+Working with machine-learning models, vision-language models, and large language models. Current research includes image-based prediction, evaluation workflows over five large datasets, AWS Trainium/Neuron, and multi-agent drone-swarm simulation. Recent experiments measured **92% model accuracy** and **sub-5,000 ms VLM latency**.
+
+**Information Technology Assistant · The Clarion**  
+Rebuilt the publication's online reading experience, supporting growth from **500 to 3,000 monthly readers**. Also improved customer-support intake and email routing, publishing pipelines, access controls, and day-to-day IT operations.
+
+**IT Assistant · Dominion Academy of Dayton**  
+Supported more than **60 devices**, resolved **500+ support tickets**, and helped manage access for **160 accounts**.
+
+## Toolkit
+
+| Area | Tools and focus |
 |---|---|
-| **[LexisGuide](https://github.com/k1lst1x/LexisGuide)**<br><sub>React 19 · Bedrock Nova · DynamoDB · Base</sub> | Reads the legal notice you were sent and finds the deadline buried in it. A router plus specialist agents, and every edit fingerprinted with SHA-256 onto a chain, so nothing can be quietly rewritten. Built for **LexHack 2026**. |
-| **[DOCKET](https://github.com/k1lst1x/DOCKET)**<br><sub>Next.js 15 · Strands Agents · Aurora DSQL</sub> | The agent that reads city hall so a volunteer neighborhood group doesn't have to. Every claim links to its source document. **81 tests**, 19 of 20 citations valid, and 5 of 5 correct refusals on the unanswerable questions. |
-| **[FORGE](https://github.com/k1lst1x/FORGE)**<br><sub>Python 3.14 · FastAPI · OpenTelemetry</sub> | Ships the feature, then audits itself and proves the hole is actually closed — tests passing *and* a fresh scan agreeing. **17 live checks**, and it refuses the findings it should refuse. Stops at the pull request, deliberately. |
-| **[Airlock](https://github.com/Rohit-ATS/Airlock)**<br><sub>TypeScript · Postgres · MCP</sub> | Proves an irreversible production change on a shadow copy before anyone approves it: apply, undo, three checksums, and the gate opens only if `pre == post_rollback`. **201 tests** across 24 suites. |
-| **[Semantic Output Cache](https://github.com/Rohit-ATS/semantic-output-cache)**<br><sub>Postgres · pgvector · Redis</sub> | Exact-match caches never hit on LLM traffic. This one embeds each output and serves it when cosine similarity clears a threshold. Redis is an accelerator, not a dependency. Key hashes stored, never keys. |
-
-<sub>Also: **[blast-radius](https://github.com/Rohit-ATS/blast-radius)** — npm supply-chain
-exposure as a graph traversal rather than a similarity search, 381 tests, built solo over
-a hackathon weekend &nbsp;·&nbsp; **[meridian](https://github.com/Rohit-ATS/meridian)** —
-a financial terminal that tracks tax lots individually, because an average basis makes
-harvesting advice quietly wrong &nbsp;·&nbsp;
-**[Vivedly AI](https://github.com/Rohit-ATS/Vivedly-AI)** — a desktop coworker with a
-five-tier memory hierarchy instead of one vector store.</sub>
-
-<br>
-
-## The pattern underneath
-
-Four of the five are the same shape, and it is the shape I find most interesting: an
-agent allowed to do real work, with the proof — not the promise — standing between it
-and the thing it would change.
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {
-  "primaryColor": "#E9F3EA", "primaryTextColor": "#1B1C14",
-  "primaryBorderColor": "#00674F", "lineColor": "#2F8A5E",
-  "secondaryColor": "#FAF7EE", "tertiaryColor": "#FFFDF5",
-  "fontFamily": "Inter, sans-serif" }}}%%
-flowchart LR
-    A["Agent<br/>proposes a change"] --> B["One doorway<br/>MCP tools, read-mostly"]
-    B --> C["Sandbox<br/>apply, undo, checksum"]
-    C -->|"pre == post_rollback"| D["Gate<br/>policy and quorum"]
-    C -->|"drift"| X["Refused<br/>with the diff"]
-    D --> E["Human decides<br/>against evidence"]
-    E --> F["Sealed record<br/>hash-chained"]
-```
-
-The interesting part is never the model. It is that the approval is impossible to
-construct without the proof: in Airlock the gate's rule is a module-private symbol only
-`openGate()` can mint, so a non-proven approval is not greyed out or warned about — it
-is unrepresentable in the type system.
-
-<br>
-
-## The stack
-
-| | |
-|---|---|
-| **Languages** | Python · TypeScript · SQL · Cypher · Solidity · Bash |
-| **Data** | PostgreSQL · pgvector · DynamoDB · Aurora DSQL · S3 Vectors · SQLite · Redis |
-| **Agents & AI** | AWS Bedrock (Nova, AgentCore) · Strands Agents · Claude API · MCP servers · embeddings and RAG |
-| **Interface** | React 19 · Next.js 15 · Tailwind · Electron · vanilla JS with no build step |
-| **Infrastructure** | AWS Lambda · S3 · CDK · Docker · FastAPI · Vercel · Amplify · GitHub Actions |
-| **Practice** | pytest · Vitest · OpenTelemetry · CodeQL · groundedness evals · threat models in the repo |
-
-<br>
-
-## How I build
-
-| | |
-|---|---|
-| **📊 No mocked data, anywhere** | Every number on every screen came back from a query that was actually run — including the empty states. A demo that lies is worse than no demo. |
-| **📐 Measured, not claimed** | If it says fast, there is a latency beside it. If it says safe, there is a checksum, an eval score, or a test id beside it. |
-| **🔑 Secrets are a design problem** | Not a checklist item at the end. The `.gitignore` globs exist because an explicit list already failed once, and the reasoning is written down in the file. |
-| **📝 Commits explain the change** | Not the diff. *"Answer the lockfile question from the lockfile."* You can read the history and know what happened. |
-
-<br>
+| **Languages** | Python · C++ · TypeScript · JavaScript · SQL |
+| **AI & agents** | LLM systems · vision-language models · AWS Bedrock AgentCore · embeddings · semantic retrieval · BM25 · MCP |
+| **Data & systems** | PostgreSQL · Aurora DSQL · SQLite · pgvector · graph databases · distributed-system design |
+| **Product engineering** | React · Next.js · FastAPI · Node.js · Electron · Docker · GitHub Actions · CodeQL |
+| **Cloud & research** | AWS · S3 Vectors · Trainium/Neuron · federated learning · Flower |
 
 ## Education
 
-**B.S. Computer Science** — San Francisco Bay University, since 2025. Coursework in data
-structures, systems and databases; most of what is above was built outside of it, on
-weekends and at hackathons — LexHack 2026, Agents for Humans, Zero Downtime, Hack Hydra.
-
-<br>
+**B.S. Computer Science · San Francisco Bay University** · GPA **4.0**  
+Student Researcher · ACM · IEEE
 
 ## Activity
 
@@ -151,37 +116,22 @@ weekends and at hackathons — LexHack 2026, Agents for Humans, Zero Downtime, H
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-light.svg" width="100%" alt="GitHub statistics: contributions, commits, pull requests, repositories and the language mix">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/stats-light.svg" width="100%" alt="GitHub contribution and repository statistics">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-light.svg" width="100%" alt="A snake eating a year of my contribution graph">
+  <img src="https://raw.githubusercontent.com/Rohit-ATS/Rohit-ATS/output/snake-light.svg" width="100%" alt="Contribution graph snake animation">
 </picture>
 
 </div>
 
-<!-- Both cards are generated by .github/workflows/assets.yml straight into the `output`
-     branch; the mark, the typing line and the projects panel are generated by tools/
-     into main. Nothing on this page comes from a third-party image host, which is
-     deliberate: the streak card this profile used to carry recomputed per distinct URL,
-     took longer to render cold than GitHub's camo proxy waits, and camo cached the 504
-     for an hour at a time. The typing line is the same effect as readme-typing-svg,
-     generated here instead. -->
-
-<br>
-
-## Contact
-
-I move fast and I would rather build the hard version. If you are working on agent
-infrastructure, graph systems, or developer tooling — or you want someone who ships over
-a hackathon weekend and still writes the tests — I would like to hear from you.
-
 <div align="center">
 
-[**rohitmaruriats@gmail.com**](mailto:rohitmaruriats@gmail.com) · [**LinkedIn**](https://www.linkedin.com/in/rohitmaruri/)
+> *“Build useful things. Measure what matters. Make the evidence visible.”*
 
-<sub>Open to internships, hackathon teams, and OSS collaboration.<br>
-Ink, paper, sand, green, meadow, amber — the palette is LexisGuide's own.</sub>
+**Open to internships, research collaborations, and building with ambitious teams.**
+
+[Say hello](mailto:rohitmaruriats@gmail.com) · [LinkedIn](https://www.linkedin.com/in/rohitmaruri/)
 
 </div>
